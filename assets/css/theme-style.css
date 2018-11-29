@@ -7,7 +7,75 @@
 
 body {
 	background-color: #F9F5F4;
+	color: #4E5F6E;
 }
+
+/* MENU -------------------------------------------------------------------- */
+.navBar {
+	width: 100vw;
+	background-color: #F9F5F4;
+}
+
+.navIconText {
+	font-family: 'Cabin', sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.nav-link, .navbar-toggler {
+	color: #4E5F6E;
+}
+
+.navbar-toggler {
+	padding: 0.3em 0 0.2em;
+}
+
+.nav-link {
+	padding: 1.2em 0;
+	font-family: 'Cabin', sans-serif;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.nav-link:link, .nav-link:visited {
+	color: #4E5F6E;
+}
+
+.nav-link:hover {
+	text-decoration: underline;
+}
+
+.navbar-collapse ul{
+	color: #4E5F6E;
+	height: 89vh;
+	text-transform: uppercase;
+	background-color: #F9F5F4;
+}
+
+.navIconText {
+	font-size: 0.8em;
+	display: inline-block;
+	height: 28px;
+	vertical-align: middle;
+}
+
+/*
+.nav {
+	position: fixed;
+	width: 100vw;
+	display: block;
+	top: 0;
+	z-index: 1080;
+}
+
+.menuList {
+	display: block;
+}
+
+.headerCon {
+	width: 100vw;
+}
+*/
 
 .navIcon {
   cursor: pointer;
@@ -15,31 +83,33 @@ body {
   .navIcon .bar1, .navIcon .bar2, .navIcon .bar3 {
     background-color: #4E5F6E;
     border-radius: 2em;
-    height: 3px;
-    margin: 6px 0;
+    height: 2px;
+    margin: 4px 0;
     transition: 0.4s;
-    width: 30px; }
+    width: 20px; }
 
 .change .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
-  transform: rotate(-45deg) translate(-6px, 6px); }
+  -webkit-transform: rotate(-45deg) translate(-5px, 4px);
+  transform: rotate(-45deg) translate(-5px, 4px); }
 
 .change .bar2 {
   opacity: 0; }
 
 .change .bar3 {
-  -webkit-transform: rotate(45deg) translate(-6px, -7px);
-  transform: rotate(45deg) translate(-6px, -7px); }
+  -webkit-transform: rotate(45deg) translate(-4px, -4px);
+  transform: rotate(45deg) translate(-4px, -4px); }
 
 .siteTitle {
 	text-transform: uppercase;
 	color: #4E5F6E;
+	float: right;
 }
 
 .menuIconBtn {
 	border: none;
 }
 
-.navbar-nav {
-	height: 100vh;
+/* HOME -------------------------------------------------------------------- */
+.main {
+	margin-top: 4em;
 }

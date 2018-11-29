@@ -21,3 +21,15 @@ function add_top_menu() {
 add_action('init', 'add_top_menu');
 
 require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+
+// Add logo support
+function add_custom_logo(){
+	add_theme_support('custom-logo', array(
+		'flex-height' => false,
+		'flex-width' => false,
+		'height' => 300,
+		'width' => 300
+	));
+}
+
+add_action('init', 'add_custom_logo');
