@@ -12,3 +12,12 @@ function add_js_and_css() {
 }
 
 add_action('wp_enqueue_scripts', 'add_js_and_css');
+
+function add_top_menu() {
+	add_theme_support('menus');
+	register_nav_menu('top_nav', 'This navigation menu will appear at the top of the pages');
+}
+
+add_action('init', 'add_top_menu');
+
+require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
