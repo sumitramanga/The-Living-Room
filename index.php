@@ -14,16 +14,6 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 
-				<!-- Show the logo if present else show the site title -->
-				<a class="navbar-brand" href="<?php echo site_url(); ?>">
-					<?php $header_logo_setting = get_theme_mod('header_logo_setting'); ?>
-					<?php if( strlen($header_logo_setting) > 0 ): ?>
-						<img src="<?php echo get_theme_mod('header_logo_setting'); ?>" alt="Logo" class="nav-logo">
-					<?php else: ?>
-						<?php echo bloginfo('name'); ?>
-					<?php endif; ?>
-				</a>
-
 				<!-- Nav pages/slide out -->
 				<?php wp_nav_menu( array(
 					'theme-location' => 'header_nav',
@@ -35,6 +25,16 @@
 					'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
 					'walker'            => new WP_Bootstrap_Navwalker(),
 				)); ?>
+
+				<!-- Show the logo if present else show the site title -->
+				<a class="navbar-brand" href="<?php echo site_url(); ?>">
+					<?php $header_logo_setting = get_theme_mod('header_logo_setting'); ?>
+					<?php if( strlen($header_logo_setting) > 0 ): ?>
+						<img src="<?php echo get_theme_mod('header_logo_setting'); ?>" alt="Logo" class="nav-logo">
+					<?php else: ?>
+						<?php echo bloginfo('name'); ?>
+					<?php endif; ?>
+				</a>
 			</nav>
 
 			<?php if(have_posts()): ?>
