@@ -4,15 +4,29 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>The Living Room</title>
+		<title><?php echo site_url(); ?></title>
 		<?php wp_head(); ?>
 	</head>
 	<body>
 		<div class="container">
-			<nav class="navbar navbar-expand-lg navbar-light bg-light">
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
+			<nav class="navbar navbar-expand-lg navbar-light">
+				<button class="navbar-toggler menuIconBtn" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<div class="navIcon">
+					  <div class="bar1"></div>
+					  <div class="bar2"></div>
+					  <div class="bar3"></div>
+					</div>
 				</button>
+
+				<!-- Show the logo if present else show the site title -->
+				<a class="siteTitle" href="<?php echo site_url(); ?>">
+					<?php $header_logo_setting = get_theme_mod('header_logo_setting'); ?>
+					<?php if( strlen($header_logo_setting) > 0 ): ?>
+						<img src="<?php echo get_theme_mod('header_logo_setting'); ?>" alt="Logo" class="nav-logo">
+					<?php else: ?>
+						<?php echo bloginfo('name'); ?>
+					<?php endif; ?>
+				</a>
 
 				<!-- Nav pages/slide out -->
 				<?php wp_nav_menu( array(
@@ -25,16 +39,6 @@
 					'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
 					'walker'            => new WP_Bootstrap_Navwalker(),
 				)); ?>
-
-				<!-- Show the logo if present else show the site title -->
-				<a class="navbar-brand" href="<?php echo site_url(); ?>">
-					<?php $header_logo_setting = get_theme_mod('header_logo_setting'); ?>
-					<?php if( strlen($header_logo_setting) > 0 ): ?>
-						<img src="<?php echo get_theme_mod('header_logo_setting'); ?>" alt="Logo" class="nav-logo">
-					<?php else: ?>
-						<?php echo bloginfo('name'); ?>
-					<?php endif; ?>
-				</a>
 			</nav>
 
 			<?php if(have_posts()): ?>
