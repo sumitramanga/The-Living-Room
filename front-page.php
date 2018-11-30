@@ -1,13 +1,18 @@
 <?php get_header(); ?>
 
 <div class="container main">
-	<div>
-		<?php if(have_posts()): ?>
-			<?php while(have_posts()): the_post(); ?>
-				<h1><?php the_title(); ?></h1>
-				<p><?php the_content(); ?></p>
-			<?php endwhile; ?>
-		<?php endif ?>
+
+	<div class="container">
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide"><img src="" class="carouselImg" alt="Carousel Image"></div>
+			</div>
+		</div>
+
+		<div class="mainImg">
+			<p>Where Living begins here</p>
+			<div class="arrowDown"></div>
+		</div>
 	</div>
 </div>
 
