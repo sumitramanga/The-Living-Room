@@ -113,3 +113,34 @@ body {
 .main {
 	margin-top: 4em;
 }
+
+.footer {
+	font-family: 'Cabin', sans-serif;
+		text-align: center;
+}
+
+.copyright {
+	font-weight: bold;
+	text-transform: uppercase;
+
+}
+
+.socialMeds {
+	text-transform: lowercase;
+}
+
+
+@media only screen and (min-width: 991.98px) {
+	.navBar {
+		width: auto;
+	}
+
+	.fixed-top{
+		position: static;
+	}
+
+	.navbar-collapse ul {
+		height:auto;
+	}
+
+}
