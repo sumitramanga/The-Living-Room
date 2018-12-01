@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <div class="container main containerWidthMain">
-
+	<!-- Carousel/landing page content -->
 	<div class="landingContent">
 		<div class="swiper-container">
 			<div class="swiper-wrapper">
@@ -31,17 +31,24 @@
 		</div>
 	</div>
 
-	<div class="container intro">
-		<div class="row">
-			<div class="col">
-				img
+	<!-- Secondary homepage content -->
+	<?php
+		$secContentImg = get_theme_mod('secondary_img_setting');
+		$secContentText = get_theme_mod('secondary_text_setting');
+	 ?>
+
+	<div class="container secondaryCont">
+		<div class="row secHomeRow">
+			<div class="col-sm-12 col-md-6 secHomeImgWrapper secColWidth" style="background-color: white;">
+				<div class="secHomeImg" style="background-image:url(<?php echo $secContentImg ?>);"></div>
 			</div>
-			<div class="col">
-				text
+			<div class="col-sm-12 col-md-6 secHomeTextWrapper secColWidth">
+				<p class="secHomeText"><?php echo $secContentText ?></p>
 			</div>
 		</div>
 	</div>
 
+	<!-- Testimonials -->
 	<div class="featuredReviews"></div>
 </div>
 
