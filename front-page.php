@@ -2,7 +2,7 @@
 
 <div class="container main containerWidthMain">
 
-	<div>
+	<div class="landingContent">
 		<div class="swiper-container">
 			<div class="swiper-wrapper">
 				<?php
@@ -22,15 +22,16 @@
 				 <div class="carouselTopLayerWrapper">
 					<div class="carouselTopLayer">
 						<p class="landingText">Where Living begins here</p>
-						<div class="arrowDown">
-						   <i class="fas fa-caret-down"></i>
+						<div class="scrollDownBtn">
+						   <i class="fas fa-angle-down fa-2x"></i>
 						</div>
 					</div>
 				 </div>
-
 			</div>
 		</div>
+	</div>
 
+	<div class="featuredReviews">
 
 	</div>
 </div>
