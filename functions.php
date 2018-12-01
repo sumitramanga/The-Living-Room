@@ -39,4 +39,3 @@ add_action('init', 'add_custom_logo');
 // add_image_size('logo_size', 0, 50, true);
 
 require get_parent_theme_file_path('./addons/custom_customizer.php');
-add_theme_support( 'automatic-feed-links' );

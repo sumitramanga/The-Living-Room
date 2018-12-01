@@ -140,10 +140,10 @@ body {
 .copyright {
 	font-weight: bold;
 	text-transform: uppercase;
-
 }
 
 .socialMeds {
+	color: #4E5F6E;
 	text-transform: lowercase;
 }
 
