@@ -2,13 +2,25 @@
 
 function customisation_for_theme( $wp_customize ) {
 
+	// Hoempage content panel --------------------------------------------------
+
+	$wp_customize->add_panel('homepage_panel', array(
+		'title' => __('Home Page Content', 'thelivingroom'),
+		'priority' => 21,
+		'description' => 'Here you can edit the content on the homepage'
+	));
+
 	// Carousel settings -------------------------------------------------------
+
 	$wp_customize-> add_section('custom_theme_carousel_img', array(
 		'title' => __('Front Page Carousel', 'thelivingroom'),
 		'description' => 'Insert images for the front page carousel',
-		'priority' => 30
+		'priority' => 30,
+		'panel' => 'homepage_panel'
+
 	));
 
+	// For loop to create 3 separate img selections
 	for ($i=1; $i <=3 ; $i++) {
 		$wp_customize-> add_setting('carousel_img_'.$i.'_setting', array(
 			'default' => '',
@@ -27,6 +39,54 @@ function customisation_for_theme( $wp_customize ) {
 			)
 		);
 	}
+
+	// Secondary content -------------------------------------------------------
+
+	$wp_customize-> add_section('secondary_content_section', array(
+		'title' => __('Secondary Content', 'thelivingroom'),
+		'description' => 'Insert an images and a short description about your company',
+		'priority' => 40,
+		'panel' => 'homepage_panel'
+
+	));
+
+	// Adding image
+	$wp_customize-> add_setting('secondary_img_setting', array(
+		'default' => '',
+		'transport' => 'refresh'
+	));
+
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize,
+			'secondary_img_control',
+			array(
+				'label' => __('Image', 'thelivingroom'),
+				'section' => 'secondary_content_section',
+				'settings' => 'secondary_img_setting',
+			)
+		)
+	);
+
+	// Adding descrption
+	$wp_customize-> add_setting('secondary_text_setting', array(
+		'default' => '',
+		'transport' => 'refresh'
+	));
+
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'secondary_text_control',
+			array(
+				'label' => __('Description', 'thelivingroom'),
+				'section' => 'secondary_content_section',
+				'settings' => 'secondary_text_setting',
+				'type' => 'textarea'
+			)
+		)
+	);
+
 
 	// Social Media Footer Links -----------------------------------------------
 

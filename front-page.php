@@ -31,6 +31,17 @@
 		</div>
 	</div>
 
+	<div class="container intro">
+		<div class="row">
+			<div class="col">
+				img
+			</div>
+			<div class="col">
+				text
+			</div>
+		</div>
+	</div>
+
 	<div class="featuredReviews"></div>
 </div>
 
