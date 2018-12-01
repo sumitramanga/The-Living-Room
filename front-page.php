@@ -37,16 +37,18 @@
 		$secContentText = get_theme_mod('secondary_text_setting');
 	 ?>
 
-	<div class="container secondaryCont">
-		<div class="row secHomeRow">
-			<div class="col-sm-12 col-md-6 secHomeImgWrapper secColWidth" style="background-color: white;">
-				<div class="secHomeImg" style="background-image:url(<?php echo $secContentImg ?>);"></div>
-			</div>
-			<div class="col-sm-12 col-md-6 secHomeTextWrapper secColWidth">
-				<p class="secHomeText"><?php echo $secContentText ?></p>
+	<?php if (strlen($secContentImg) > 0 && strlen($secContentText) > 0): ?>
+		<div class="container secondaryCont">
+			<div class="row secHomeRow">
+				<div class="col-sm-12 col-md-6 secHomeImgWrapper secColWidth" style="background-color: white;">
+					<div class="secHomeImg" style="background-image:url(<?php echo $secContentImg ?>);"></div>
+				</div>
+				<div class="col-sm-12 col-md-6 secHomeTextWrapper secColWidth">
+					<p class="secHomeText"><?php echo $secContentText ?></p>
+				</div>
 			</div>
 		</div>
-	</div>
+	<?php endif; ?>
 
 	<!-- Testimonials -->
 	<div class="featuredReviews"></div>

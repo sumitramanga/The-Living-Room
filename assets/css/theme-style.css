@@ -134,6 +134,7 @@ body {
 
 .footer {
 	font-family: 'Cabin', sans-serif;
+	margin: 4em 0 2em;
 	text-align: center;
 }
 
@@ -197,7 +198,6 @@ body {
 	.carouselTopLayer {
 		width: 500px;
 	}
-
 }
 
 @media only screen and (min-width: 768px) {
@@ -213,9 +213,7 @@ body {
 	.secHomeTextWrapper {
 		margin-right: auto;
 	}
-
 }
-
 
 @media only screen and (min-width: 991.98px) {
 	.navBar {
