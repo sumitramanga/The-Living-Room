@@ -50,7 +50,7 @@
 		</div>
 	<?php endif; ?>
 
-	<!-- Testimonials -->
+	<!-- Testimonials. WILL DO AFTER IT'S DONE ON THE OTHER PAGES -->
 	<div class="featuredReviews"></div>
 </div>
 
