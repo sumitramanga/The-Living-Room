@@ -14,7 +14,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Cabin:400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
 	</head>
 	<body>
-		<div class="navbar navbar-expand-lg fixed-top">
+		<div class="navbar navbar-expand-lg">
 			<div class="navBar">
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
 					<div class="navIcon">
@@ -27,9 +27,12 @@
 
 				<!-- Show the logo if present else show the site title -->
 				<a class="navbar-brand siteTitle" href="<?php echo site_url(); ?>">
-					<?php $header_logo_setting = get_theme_mod('header_logo_setting'); ?>
-					<?php if( strlen($header_logo_setting) > 0 ): ?>
-						<img src="<?php echo get_theme_mod('header_logo_setting'); ?>" alt="Logo" class="nav-logo">
+					<?php
+						$site_logo = get_theme_mod('custom_logo');
+						$logo_url = wp_get_attachment_image_url($site_logo, 'medium');
+					 ?>
+					<?php if($site_logo): ?>
+						<img src="<?php echo $logo_url ?>" alt="Logo" class="nav-logo" width="200">
 					<?php else: ?>
 						<?php echo bloginfo('name'); ?>
 					<?php endif; ?>

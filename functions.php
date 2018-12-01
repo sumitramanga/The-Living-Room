@@ -27,13 +27,15 @@ require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 // Add logo support
 function add_custom_logo(){
 	add_theme_support('custom-logo', array(
-		'flex-height' => false,
-		'flex-width' => false,
+		'flex-height' => true,
+		'flex-width' => true,
 		'height' => 300,
 		'width' => 300
 	));
 }
 
 add_action('init', 'add_custom_logo');
+
+// add_image_size('logo_size', 0, 50, true);
 
 require get_parent_theme_file_path('./addons/custom_customizer.php');

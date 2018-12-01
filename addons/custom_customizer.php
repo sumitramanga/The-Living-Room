@@ -2,8 +2,7 @@
 
 function customisation_for_theme( $wp_customize ) {
 
-	// Carousel settings ------------------------------------------------------------
-
+	// Carousel settings -------------------------------------------------------
 	$wp_customize-> add_section('custom_theme_carousel_img', array(
 		'title' => __('Front Page Carousel', 'thelivingroom'),
 		'description' => 'Insert images for the front page carousel',
