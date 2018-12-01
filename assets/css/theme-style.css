@@ -77,6 +77,8 @@ body {
 }
 */
 
+/* NAVICON */
+
 .navIcon {
   cursor: pointer;
   display: inline-block; }
@@ -111,12 +113,44 @@ body {
 
 /* HOME -------------------------------------------------------------------- */
 .main {
-	margin-top: 4em;
+	/* margin-top: 4em; */
+}
+
+.swiper-wrapper {
+	height: 50vh;
+}
+
+.carouselImgBg {
+	height: 80vh;
+	background-size: cover;
+	background-position: center;
+}
+
+.carouselTopLayerWrapper {
+	position: absolute;
+	left: 50%;
+	top: 35%;
+}
+
+.carouselTopLayer {
+	left: -50%;
+	text-align: center;
+	top: -50%;
+	position: relative;
+	width: 205px;
+	z-index: 1080;
+}
+
+.landingText {
+	font-family: 'PlayfairDisplay', serif;
+	font-size: 1.6em;
+	font-weight: bolder;
+	text-transform: uppercase;
 }
 
 .footer {
 	font-family: 'Cabin', sans-serif;
-		text-align: center;
+	text-align: center;
 }
 
 .copyright {
@@ -135,7 +169,7 @@ body {
 		width: auto;
 	}
 
-	.fixed-top{
+	.fixed-top {
 		position: static;
 	}
 
@@ -143,4 +177,7 @@ body {
 		height:auto;
 	}
 
+	.containerWidthMain {
+		max-width: 94vw;
+	}
 }

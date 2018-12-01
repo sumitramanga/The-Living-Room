@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
-<div class="container main">
+<div class="container main containerWidthMain">
 
-	<div class="container">
+	<div>
 		<div class="swiper-container">
 			<div class="swiper-wrapper">
 				<?php
@@ -14,15 +14,24 @@
 				 ?>
 
 				 <?php foreach ($all_carousel_imgs as $carousel_img): ?>
-					 <div class="swiper-slide"><img src="<?php echo $carousel_img ?>"  class="carouselImg" alt="Carousel Image"></div>
+					 <div class="swiper-slide">
+						<div class="carouselImgBg" style="background-image: url(<?php echo $carousel_img ?>);"></div>
+					 </div>
 				 <?php endforeach; ?>
+
+				 <div class="carouselTopLayerWrapper">
+					<div class="carouselTopLayer">
+						<p class="landingText">Where Living begins here</p>
+						<div class="arrowDown">
+						   <i class="fas fa-caret-down"></i>
+						</div>
+					</div>
+				 </div>
+
 			</div>
 		</div>
 
-		<!-- <div class="mainImg">
-			<p>Where Living begins here</p>
-			<div class="arrowDown"></div>
-		</div> -->
+
 	</div>
 </div>
 
