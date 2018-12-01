@@ -31,9 +31,7 @@
 		</div>
 	</div>
 
-	<div class="featuredReviews">
-
-	</div>
+	<div class="featuredReviews"></div>
 </div>
 
 

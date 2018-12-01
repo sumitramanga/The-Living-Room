@@ -9,58 +9,88 @@ function customisation_for_theme( $wp_customize ) {
 		'priority' => 30
 	));
 
-	$wp_customize-> add_setting('carousel_img_1_setting', array(
+	for ($i=1; $i <=3 ; $i++) {
+		$wp_customize-> add_setting('carousel_img_'.$i.'_setting', array(
+			'default' => '',
+			'transport' => 'refresh'
+		));
+
+		$wp_customize->add_control(
+			new WP_Customize_Image_Control(
+				$wp_customize,
+				'carousel_img_'.$i.'_control',
+				array(
+					'label' => __('Image '.$i, 'thelivingroom'),
+					'section' => 'custom_theme_carousel_img',
+					'settings' => 'carousel_img_'.$i.'_setting',
+				)
+			)
+		);
+	}
+
+	// Social Media Footer Links -----------------------------------------------
+
+	$wp_customize-> add_section('social_media_links', array(
+		'title' => __('Social Media Links', 'thelivingroom'),
+		'description' => 'Here you can add your social media links'
+	));
+
+	// Adding Pinterest
+	$wp_customize-> add_setting('pinterest_link_setting', array(
 		'default' => '',
 		'transport' => 'refresh'
 	));
 
 	$wp_customize->add_control(
-		new WP_Customize_Image_Control(
+		new WP_Customize_Control(
 			$wp_customize,
-			'carousel_img_1_control',
+			'pinterest_link_control',
 			array(
-				'label' => __('Image 1', 'thelivingroom'),
-				'section' => 'custom_theme_carousel_img',
-				'settings' => 'carousel_img_1_setting',
+				'label' => __('Pinterst', 'thelivingroom'),
+				'section' => 'social_media_links',
+				'settings' => 'pinterest_link_setting',
+				'type' => 'input'
 			)
 		)
 	);
 
-	$wp_customize-> add_setting('carousel_img_2_setting', array(
+	// Adding Facebook
+	$wp_customize-> add_setting('facebook_link_setting', array(
 		'default' => '',
 		'transport' => 'refresh'
 	));
 
 	$wp_customize->add_control(
-		new WP_Customize_Image_Control(
+		new WP_Customize_Control(
 			$wp_customize,
-			'carousel_img_2_control',
+			'facebook_link_control',
 			array(
-				'label' => __('Image 2', 'thelivingroom'),
-				'section' => 'custom_theme_carousel_img',
-				'settings' => 'carousel_img_2_setting',
+				'label' => __('Facebook', 'thelivingroom'),
+				'section' => 'social_media_links',
+				'settings' => 'facebook_link_setting',
+				'type' => 'input'
 			)
 		)
 	);
 
-	$wp_customize-> add_setting('carousel_img_3_setting', array(
+	// Adding houzz
+	$wp_customize-> add_setting('houzz_link_setting', array(
 		'default' => '',
 		'transport' => 'refresh'
 	));
 
 	$wp_customize->add_control(
-		new WP_Customize_Image_Control(
+		new WP_Customize_Control(
 			$wp_customize,
-			'carousel_img_3_control',
+			'houzz_link_control',
 			array(
-				'label' => __('Image 3', 'thelivingroom'),
-				'section' => 'custom_theme_carousel_img',
-				'settings' => 'carousel_img_3_setting',
+				'label' => __('Houzz', 'thelivingroom'),
+				'section' => 'social_media_links',
+				'settings' => 'houzz_link_setting',
+				'type' => 'input'
 			)
 		)
 	);
-
-	// Carousel settings end ------------------------------------------------------------
 
 }
 add_action('customize_register', 'customisation_for_theme');

@@ -59,24 +59,6 @@ body {
 	vertical-align: middle;
 }
 
-/*
-.nav {
-	position: fixed;
-	width: 100vw;
-	display: block;
-	top: 0;
-	z-index: 1080;
-}
-
-.menuList {
-	display: block;
-}
-
-.headerCon {
-	width: 100vw;
-}
-*/
-
 /* NAVICON */
 
 .navIcon {
@@ -102,9 +84,10 @@ body {
   transform: rotate(45deg) translate(-4px, -4px); }
 
 .siteTitle {
-	text-transform: uppercase;
 	color: #4E5F6E;
 	float: right;
+	margin-right: 0;
+	text-transform: uppercase;
 }
 
 .menuIconBtn {
@@ -164,6 +147,17 @@ body {
 	text-transform: lowercase;
 }
 
+@media (min-width: 576px) {
+	.landingText {
+		font-size: 2.4em;
+	}
+
+	.carouselTopLayer {
+		width: 500px;
+	}
+
+}
+
 
 @media only screen and (min-width: 991.98px) {
 	.navBar {
@@ -180,5 +174,13 @@ body {
 
 	.containerWidthMain {
 		max-width: 94vw;
+	}
+
+	.landingText {
+		font-size: 3.1em;
+	}
+
+	.carouselTopLayer {
+		width: 600px;
 	}
 }
