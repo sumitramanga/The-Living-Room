@@ -1,9 +1,29 @@
 $ = jQuery
 
 $(document).ready(function(){
-	console.log('jQuery is plugged in');
 	$(".navbar-toggler").click(function(){
-		console.log('clicked');
 		this.classList.toggle("change");
+	});
+
+	var mySwiper = new Swiper ('.swiper-container', {
+		loop: true,
+		autoHeight: true,
+		autoplay: true,
+		delay: 300,
+		effect: 'fade',
+		fadeEffect: {
+			crossFade: true
+		},
+
+		// If we need pagination
+		pagination: {
+		  el: '.swiper-pagination',
+		},
+
+		// Navigation arrows
+		navigation: {
+		  nextEl: '.swiper-button-next',
+		  prevEl: '.swiper-button-prev',
+		}
 	});
 });
