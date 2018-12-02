@@ -8,7 +8,9 @@ $metaboxes = array(
 		'fields' => array(
 			'icon' => array(
 				'title' => 'Icon Type',
-				'type' => 'radio'
+				'type' => 'radio',
+				'description' => 'This is the type of icon you would like to feature on a service',
+				'options' => array('Handshake', 'Pencil', 'Sofa', 'Clipboard')
 			)
 		)
 	)
@@ -32,6 +34,7 @@ function show_metaboxes($post, $args) {
 	$fields = $metaboxes[$args['id']]['fields'];
 	$custom_values = get_post_custom($post->ID);
 	$output = '<input type="hidden" name="post_format_meta_box_nonce" value="'.wp_create_nonce(basename(__FILE__)).'">';
+	// $radio_value = ( isset( $custom_value['radio_value'][0] ) && '' !== $custom_value['radio_value'][0] ) ? $custom_value['radio_value'][0] : '';
 
 	if ( ! empty($fields) ) {
 		foreach ($fields as $id => $field) {
@@ -43,19 +46,17 @@ function show_metaboxes($post, $args) {
 				break;
 				//for icons
 				case 'radio':
-					$output .= '<label for="'.$id.'">'.$field['title'].'</label>';
-					$output .= '<input type="radio" name="'.$id.'"> Icon 1 handshake';
-				break;
-
-				// For testimonials
-				case 'testimonial':
-					$output .= '<label for="'.$id.'">'.$field['title'].'</label>';
-					$output .= '<textarea name="'.$id.'" rows="4" cols="40">';
+					$output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
+					$options = $field['options'];
+					foreach ($options as $option) {
+						$output .= '<input type="radio" name="'.$id.'" value="'.$option.'"'.checked( $radio_value, $option ).'>'.$option.'<br>';
+						// var_dump($radio_value);
+					}
 				break;
 
 				default:
-				$output .= '<label for="'.$id.'">'.$field['title'].'</label>';
-				$output .= '<input type="text" name="'.$id.'" class="servicesInput" style="width:100%;">';
+					$output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
+					$output .= '<input type="text" name="'.$id.'" class="servicesInput" style="width:100%;"><br>';
 				break;
 			}
 		}
@@ -86,7 +87,6 @@ function save_metaboxes($post_id){
 	$post_type = get_post_type();
 
 	foreach ( $metaboxes as $id => $metabox ) {
-		// die($post_type);
 		if ( $metabox['applicableto'] == $post_type ) {
 			$fields = $metaboxes[$id]['fields'];
 
@@ -100,6 +100,7 @@ function save_metaboxes($post_id){
 					delete_post_meta($post_id, $id, $old_value);
 				}
 			}
+
 
 		}
 	}
