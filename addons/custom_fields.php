@@ -49,8 +49,9 @@ function show_metaboxes($post, $args) {
 					$output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
 					$options = $field['options'];
 					foreach ($options as $option) {
-						$output .= '<input type="radio" name="'.$id.'" value="'.$option.'"'.checked( $radio_value, $option ).'>'.$option.'<br>';
+						$output .= '<input type="radio" name="'.$id.'" value="'.$option.'"<br>';
 						// var_dump($radio_value);
+						// need a if statement for checked or not
 					}
 				break;
 
