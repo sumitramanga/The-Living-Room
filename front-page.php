@@ -21,7 +21,8 @@
 
 				 <div class="carouselTopLayerWrapper">
 					<div class="carouselTopLayer">
-						<p class="landingText">Where Living begins here</p>
+						<?php $land_screen_text = get_theme_mod('landing_screen_text_setting'); ?>
+						<p class="landingText"><?php echo $land_screen_text ?></p>
 						<div class="scrollDownBtn">
 						   <i class="fas fa-angle-down fa-2x"></i>
 						</div>

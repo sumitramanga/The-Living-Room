@@ -2,7 +2,7 @@
 
 function customisation_for_theme( $wp_customize ) {
 
-	// Hoempage content panel --------------------------------------------------
+	// Homepage content panel --------------------------------------------------
 
 	$wp_customize->add_panel('homepage_panel', array(
 		'title' => __('Home Page Content', 'thelivingroom'),
@@ -10,8 +10,35 @@ function customisation_for_theme( $wp_customize ) {
 		'description' => 'Here you can edit the content on the homepage'
 	));
 
-	// Carousel settings -------------------------------------------------------
+	// Landing Screen Text -----------------------------------------------------
+	$wp_customize-> add_section('landing_screen_text_section', array(
+		'title' => __('Landing Screen Text', 'thelivingroom'),
+		'description' => 'Add a small quote to the landing screen text',
+		'priority' => 40,
+		'panel' => 'homepage_panel'
 
+	));
+
+	$wp_customize-> add_setting('landing_screen_text_setting', array(
+		'default' => '',
+		'transport' => 'refresh'
+	));
+
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'landing_screen_text_control',
+			array(
+				'label' => __('Quote', 'thelivingroom'),
+				'section' => 'landing_screen_text_section',
+				'settings' => 'landing_screen_text_setting',
+				'type' => 'text'
+			)
+		)
+	);
+
+
+	// Carousel settings -------------------------------------------------------
 	$wp_customize-> add_section('custom_theme_carousel_img', array(
 		'title' => __('Front Page Carousel', 'thelivingroom'),
 		'description' => 'Insert images for the front page carousel',
@@ -41,7 +68,6 @@ function customisation_for_theme( $wp_customize ) {
 	}
 
 	// Secondary content -------------------------------------------------------
-
 	$wp_customize-> add_section('secondary_content_section', array(
 		'title' => __('Secondary Content', 'thelivingroom'),
 		'description' => 'Insert an images and a short description about your company',
