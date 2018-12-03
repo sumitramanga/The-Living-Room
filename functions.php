@@ -40,6 +40,8 @@ add_action('init', 'add_custom_logo');
 
 require get_parent_theme_file_path('./addons/custom_customizer.php');
 
+add_theme_support('post-thumbnails');
+
 function add_services() {
 
 	// Adding labels to the custom type of services
@@ -61,7 +63,7 @@ function add_services() {
 		'menu_position' => 32,
 		'menu_icon' => 'dashicons-smiley',
 		'supports' => array(
-			'title', 'thumbnail', 'editor'
+			'title', 'editor', 'thumbnail'
 		),
 		'query_var' => true
 	);
