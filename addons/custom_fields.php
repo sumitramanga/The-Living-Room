@@ -10,7 +10,7 @@ $metaboxes = array(
 				'title' => 'Icon Type',
 				'type' => 'radio',
 				'description' => 'This is the type of icon you would like to feature on a service',
-				'options' => array('Handshake', 'Pencil', 'Sofa', 'Clipboard')
+				'options' => array('Handshake', 'Pen', 'Couch', 'Clipboard')
 			),
 			'description' => array(
 				'title' => 'Descrption',
@@ -69,11 +69,11 @@ function show_metaboxes($post, $args) {
 				case 'textarea':
 					$output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
 					$output .= '<textarea rows="4" cols="50" name="'.$id.'" class="servicesTextArea" style="width:100%;">';
-					$testimonial_text = '';
-					if ( strlen($custom_values['testimonial'][0]) > 1) {
-						$testimonial_text = $custom_values['testimonial'][0];
+					$feild_text = '';
+					if ( strlen($custom_values[$id][0]) > 1) {
+						$field_text = $custom_values[$id][0];
 					}
-					$output .= $testimonial_text.'</textarea>';
+					$output .= $field_text.'</textarea>';
 				break;
 
 				default:

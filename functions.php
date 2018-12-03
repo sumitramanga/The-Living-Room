@@ -1,5 +1,7 @@
 <?php
 
+// require get_parent_theme_file_path('./addons/educational_alert.php');
+
 function add_js_and_css() {
 	// CSS's
 	wp_enqueue_style('bootstrap-css', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '4.1.3', 'all');
