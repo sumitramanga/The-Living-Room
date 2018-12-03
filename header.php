@@ -62,5 +62,11 @@
 		 ?>
 
 		<?php if (get_header_image()): ?>
-			<div id="headerBanner" class="bg-dark headerBanner" style="background-image:url(<?php echo $banner_image ?>);"></div>
+			<div id="headerBanner" class="bg-dark headerBanner" style="background-image:url(<?php echo $banner_image ?>);">
+				<?php if (have_posts()): ?>
+					<?php while (have_posts()): the_post(); ?>
+						<h1><?php the_title(); ?></h1>
+					<?php endwhile; ?>
+				<?php endif; ?>
+			</div>
 		<?php endif; ?>

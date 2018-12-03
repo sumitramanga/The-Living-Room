@@ -1,11 +1,8 @@
 <?php /* Template name: Services Template */ ?>
 
 <?php get_header(); ?>
-<p>Services Template</p>
 	<?php if(have_posts()): ?>
 		<?php while(have_posts()): the_post(); ?>
-			<!-- title for the page -->
-			<h1><?php the_title(); ?></h1>
 
 			<?php $args = array(
 				'post_type' => 'services'
