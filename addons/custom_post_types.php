@@ -45,7 +45,7 @@ function add_staff(){
 		'show_ui' => true,
 		'show_in_menu' => true,
 		'show_in_nav_menus' => false,
-		'menu_position' => 32,
+		'menu_position' => 35,
 		'menu_icon' => 'dashicons-id-alt',
 		'supports' => array(
 			'title', 'editor', 'thumbnail'
