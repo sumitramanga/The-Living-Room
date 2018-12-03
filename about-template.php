@@ -13,18 +13,23 @@
 
 			<?php
 				$args = array(
-					'post_type' => 'staff'
+					'post_type' => 'staff',
+					'order' => 'ASC',
+					'orderby' => 'title'
 				)
 			 ?>
 			<?php $all_staff = new WP_Query($args); ?>
 
 			<?php if($all_staff->have_posts()): ?>
 				<?php while($all_staff->have_posts()): $all_staff->the_post(); ?>
-					<div class="container staff">
-						<?php the_post_thumbnail('medium', ['class' => 'staffImg', 'alt' => 'Staff member']); ?> <!-- feature image -->
-						<h3 class="staffName"><?php the_title(); ?></h3> <!-- the_title -->
-						<p class="staffDesc"><?php the_content(); ?></p> <!-- the_content -->
-					</div>
+					<?php if (has_post_thumbnail()): ?>
+						<div class="container staff">
+							<?php the_post_thumbnail('medium', ['class' => 'staffImg', 'alt' => 'Staff member']); ?> <!-- feature image -->
+							<h3 class="staffName"><?php the_title(); ?></h3> <!-- the_title -->
+							<p class="staffDesc"><?php the_content(); ?></p> <!-- the_content -->
+						</div>
+					<?php endif; ?>
+
 				<?php endwhile; ?>
 			<?php endif; ?>
 
