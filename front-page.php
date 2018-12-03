@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header('front'); ?>
 
 <div class="container main containerWidthMain">
 	<!-- Carousel/landing page content -->
