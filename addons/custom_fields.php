@@ -69,7 +69,7 @@ function show_metaboxes($post, $args) {
 				case 'textarea':
 					$output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
 					$output .= '<textarea rows="4" cols="50" name="'.$id.'" class="servicesTextArea" style="width:100%;">';
-					$feild_text = '';
+					$field_text = '';
 					if ( strlen($custom_values[$id][0]) > 1) {
 						$field_text = $custom_values[$id][0];
 					}

@@ -37,11 +37,11 @@
 						<?php endif; ?>
 
 						<?php if ( strlen($description) > 1 ): ?>
-							<p> <?php echo $description; ?></p>
+							<p><?php echo $description; ?></p>
 						<?php endif; ?>
 
 						<?php if ( strlen($testimonial) > 1 ): ?>
-							<p> <?php echo $testimonial; ?></p>
+							<p><?php echo $testimonial; ?></p>
 						<?php endif; ?>
 
 					<?php endwhile; ?>
