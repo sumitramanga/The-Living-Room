@@ -16,10 +16,16 @@
 				<?php if( $all_services->have_posts() ): ?>
 					<?php while($all_services->have_posts()): $all_services->the_post(); ?>
 						<div class=""><?php the_title(); ?></div>
+
+						<!-- Echoing the icon type name -->
 						<?php
-							$custom_field = get_post_custom();
-							$icon_type = get_post_meta($post->ID, 'icon', true);
+							$id = get_the_id();
+							$icon_type = get_post_meta($id, 'icon', true);
+							$description = get_post_meta($id, 'description', true);
+							$testimonial = get_post_meta($id, 'testimonial', true);
 							echo $icon_type;
+							echo $description;
+							echo $testimonial;
   						 ?>
 					<?php endwhile; ?>
 				<?php endif; ?>

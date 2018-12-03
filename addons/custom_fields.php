@@ -11,6 +11,16 @@ $metaboxes = array(
 				'type' => 'radio',
 				'description' => 'This is the type of icon you would like to feature on a service',
 				'options' => array('Handshake', 'Pencil', 'Sofa', 'Clipboard')
+			),
+			'description' => array(
+				'title' => 'Descrption',
+				'type' => 'textarea',
+				'description' => 'Write your description about the service'
+			),
+			'testimonial' => array(
+				'title' => 'Testimonial',
+				'type' => 'textarea',
+				'description' => 'Write your testimonial from customers'
 			)
 		)
 	)
@@ -54,6 +64,16 @@ function show_metaboxes($post, $args) {
 						}
 						$output .= '<input type="radio" name="'.$id.'" value="'.$option.'"'.$checked_value.'>'.$option.'<br>';
 					}
+				break;
+				// for testimonials & service description
+				case 'textarea':
+					$output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
+					$output .= '<textarea rows="4" cols="50" name="'.$id.'" class="servicesTextArea" style="width:100%;">';
+					$testimonial_text = '';
+					if ( strlen($custom_values['testimonial'][0]) > 1) {
+						$testimonial_text = $custom_values['testimonial'][0];
+					}
+					$output .= $testimonial_text.'</textarea>';
 				break;
 
 				default:
