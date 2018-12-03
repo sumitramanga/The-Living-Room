@@ -34,7 +34,6 @@ function show_metaboxes($post, $args) {
 	$fields = $metaboxes[$args['id']]['fields'];
 	$custom_values = get_post_custom($post->ID);
 	$output = '<input type="hidden" name="post_format_meta_box_nonce" value="'.wp_create_nonce(basename(__FILE__)).'">';
-	// $radio_value = ( isset( $custom_value['radio_value'][0] ) && '' !== $custom_value['radio_value'][0] ) ? $custom_value['radio_value'][0] : '';
 
 	if ( ! empty($fields) ) {
 		foreach ($fields as $id => $field) {
@@ -49,9 +48,11 @@ function show_metaboxes($post, $args) {
 					$output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
 					$options = $field['options'];
 					foreach ($options as $option) {
-						$output .= '<input type="radio" name="'.$id.'" value="'.$option.'"<br>';
-						// var_dump($radio_value);
-						// need a if statement for checked or not
+						$checked_value = '';
+						if ($custom_values['icon']['0'] == $option) {
+							$checked_value = 'checked="checked"';
+						}
+						$output .= '<input type="radio" name="'.$id.'" value="'.$option.'"'.$checked_value.'>'.$option.'<br>';
 					}
 				break;
 
