@@ -94,6 +94,18 @@ body {
 	border: none;
 }
 
+/* SERVICES ------------------------------------------------------------------*/
+
+.headerBanner {
+	height: 300px;
+	width: 100%;
+	max-width: 100%;
+	background-position: center right;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+
 /* HOME -------------------------------------------------------------------- */
 .main {
 	/* margin-top: 4em; */

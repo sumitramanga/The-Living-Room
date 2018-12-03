@@ -1,7 +1,18 @@
 <?php /* Template name: Services Template */ ?>
 
 <?php get_header(); ?>
-	<h1>this is the services template</h1>
+
+	<?php
+		if ( get_header_image() == false ) {
+			$banner_image = get_template_directory_uri() . 'assets/images/default-header.jpg';
+		} else {
+			$banner_image = get_header_image();
+		}
+	 ?>
+
+	<?php if (get_header_image()): ?>
+		<div id="headerBanner" class="bg-dark headerBanner" style="background-image:url(<?php echo $banner_image ?>);"></div>
+	<?php endif; ?>
 
 	<?php if(have_posts()): ?>
 		<?php while(have_posts()): the_post(); ?>

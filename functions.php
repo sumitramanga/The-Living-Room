@@ -44,3 +44,29 @@ require get_parent_theme_file_path('./addons/custom_customizer.php');
 require get_parent_theme_file_path('./addons/custom_post_types.php');
 
 require get_parent_theme_file_path('./addons/custom_fields.php');
+
+function add_custom_header_support(){
+	register_default_headers( array(
+		'default_image' => array(
+			'url' => get_template_directory_uri() . '/assets/images/default-header.jpg',
+			'thumbnail_url' => get_template_directory_uri() . '/assets/images/default-header.jpg',
+			'description' => __('default_image', 'thelivingroom')
+		)
+	) );
+
+	$default_image = array(
+		'default-image' => get_template_directory_uri() . '/assets/images/default-header.jpg',
+		'height' => 720,
+		'width' => 1280,
+		'header-text' => false,
+		'flex-height' => false,
+		'flex-width' => false,
+		'uploads' => true,
+		'random-default' => false,
+		'default-text-color' => ''
+	);
+
+	add_theme_support('custom-header', $default_image);
+}
+
+add_action('init', 'add_custom_header_support');
