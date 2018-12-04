@@ -197,6 +197,17 @@ body {
 	transform: translateY(-50%);
 }
 
+
+/* CONTACT ------------------------------------------------------------------ */
+
+.form-control {
+	border-radius: 0;
+}
+
+.submitBtnWrapper {
+	text-align: center;
+}
+
 @media only screen and (min-width: 576px) {
 
 	.secColWidth {
@@ -224,6 +235,12 @@ body {
 
 	.secHomeTextWrapper {
 		margin-right: auto;
+	}
+
+	.contactContainer {
+		padding-left: 3em;
+		padding-right: 3em;
+		max-width: 720px;
 	}
 }
 
@@ -256,5 +273,9 @@ body {
 		height: 470px;
 		max-width: 470px;
 		max-height: 470px;
+	}
+
+	.contactContainer {
+		max-width: 720px;
 	}
 }
