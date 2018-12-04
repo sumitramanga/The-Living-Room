@@ -21,6 +21,19 @@ $metaboxes = array(
 				'title' => 'Testimonial',
 				'type' => 'textarea',
 				'description' => 'Write your testimonial from customers'
+			),
+			'name' => array(
+				'title' => 'Full Name',
+				'type' => 'text',
+				'description' => 'Customers name'
+			),
+			'email' => array(
+				'title' => 'Email',
+				'type' => 'email'
+			),
+			'contacting_reason' => array(
+				'title' => 'Contacting reason',
+				'type' => 'select'
 			)
 		)
 	)
@@ -63,6 +76,15 @@ function show_metaboxes($post, $args) {
 							$checked_value = 'checked="checked"';
 						}
 						$output .= '<input type="radio" name="'.$id.'" value="'.$option.'"'.$checked_value.'>'.$option.'<br>';
+					}
+				break;
+				// for contact/enquries
+				case 'select':
+					$output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
+					$options = $field['options'];
+					foreach ($options as $option) {
+						$checked_value = '';
+						$output .= '<input type="select" name="'.$id.'">'.$option.'<br>';
 					}
 				break;
 				// for testimonials & service description
