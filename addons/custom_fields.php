@@ -21,19 +21,40 @@ $metaboxes = array(
 				'title' => 'Testimonial',
 				'type' => 'textarea',
 				'description' => 'Write your testimonial from customers'
-			),
-			'name' => array(
+			)
+		)
+	),
+	'enquiries' => array(
+		'title' => 'Enquiry Details',
+		'applicableto' => 'enquiries',
+		'location' => 'normal',
+		'priority' => 'high',
+		'fields' => array(
+			'user_name' => array(
 				'title' => 'Full Name',
 				'type' => 'text',
 				'description' => 'Customers name'
 			),
 			'email' => array(
 				'title' => 'Email',
-				'type' => 'email'
+				'type' => 'email',
+				'description' => 'Users email'
 			),
-			'contacting_reason' => array(
+			'contact_reason' => array(
 				'title' => 'Contacting reason',
-				'type' => 'select'
+				'type' => 'select',
+				'description' => 'Reasoning for contacting us',
+				'options' => array('I have a question', 'Booking an appointment', 'Wanting more information on your services')
+			),
+			'enquiry_subject' => array(
+				'title' => 'Subject',
+				'type' => 'text',
+				'description' => 'Subject of enquiry message'
+			),
+			'user_message' => array(
+				'title' => 'Message',
+				'type' => 'textarea',
+				'description' => 'The users message'
 			)
 		)
 	)
@@ -64,7 +85,7 @@ function show_metaboxes($post, $args) {
 				// for descrptions for service
 				case 'text':
 					$output .= '<label for="'.$id.'">'.$field['title'].'</label>';
-					$output .= '<input type="text" name="'.$id.'" class="servicesInput" style="width:100%;">';
+					$output .= '<input type="text" name="'.$id.'" class="servicesInput" style="width:100%;" value="'.$custom_values[$id][0].'">';
 				break;
 				//for icons
 				case 'radio':
@@ -81,12 +102,19 @@ function show_metaboxes($post, $args) {
 				// for contact/enquries
 				case 'select':
 					$output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
+					$output .= '<select name="'.$id.'"><option>Chosen an option</option>';
 					$options = $field['options'];
 					foreach ($options as $option) {
-						$checked_value = '';
-						$output .= '<input type="select" name="'.$id.'">'.$option.'<br>';
+						$output .= '<option value="'.$option.'">'.$option.'<option>';
 					}
+					$output .= '</select><br>';
 				break;
+
+				case 'email':
+					$output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
+					$output .= '<input type="email" name="'.$id.'" class="servicesInput" style="width:100%;" value="'.$custom_values[$id][0].'"><br>';
+				break;
+
 				// for testimonials & service description
 				case 'textarea':
 					$output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';

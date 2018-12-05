@@ -12,44 +12,44 @@
 			return;
 		}
 
-		if (strlen($_POST['userName']) <= 2) {
+		if (strlen($_POST['user_name']) <= 2) {
 			array_push($errors, 'Name is too short. Please enter your full name');
-		} elseif (strlen($_POST['userName']) >= 90) {
+		} elseif (strlen($_POST['user_name']) >= 90) {
 			array_push($errors, 'Name is too long.');
 		}
 
-		if (strlen($_POST['userEmail']) <= 1) {
+		if (strlen($_POST['email']) <= 1) {
 			array_push($errors, 'Email is too short. Please enter a valid email.');
 		}
 
-		if ($_POST['reasonForContact'] == 'Choose an option') {
+		if ($_POST['contact_reason'] == 'Choose an option') {
 			array_push($errors, 'Please enter your reasoning for contacting us');
 		}
 
-		if (strlen($_POST['enquirySubject']) <= 5) {
+		if (strlen($_POST['enquiry_subject']) <= 5) {
 			array_push($errors, 'Please enter a more descriptive subject');
-		} elseif (strlen($_POST['enquierySubject']) >= 100) {
+		} elseif (strlen($_POST['enquiery_subject']) >= 100) {
 			array_push($errors, 'Your subject is too long. Please enter a shorter subject.');
 		}
 
-		if (strlen($_POST['userMessage']) <= 5) {
+		if (strlen($_POST['user_message']) <= 5) {
 			array_push($errors, 'Please enter a more descriptive message');
-		} elseif (strlen($_POST['userMessage']) >= 400) {
+		} elseif (strlen($_POST['user_message']) >= 400) {
 			array_push($errors, 'Please enter a shorter message');
 		}
 
 		if (empty($errors)) {
 			$args = array(
-				'post_title' => $_POST['enquirySubject'],
-				'post_content' => $_POST['userMessage'],
 				'post_type' =>	'enquiries',
+				'post_title' => $_POST['enquiry_subject'],
 				'meta_input' =>	array(
-					'full_name' => $_POST['userName'],
-					'email' => $_POST['userEmail'],
-					'message_reason' => $_POST['reasonForContact']
+					'user_name' => $_POST['user_name'],
+					'email' => $_POST['email'],
+					'contact_reason' => $_POST['contact_reason'],
+					'enquiry_subject' => $_POST['enquiry_subject'],
+					'user_message' => $_POST['user_message']
 				)
 			);
-
 			wp_insert_post($args);
 			$success_message = 'Thank you for your message. We will get back to you shortly';
 		}
@@ -71,8 +71,8 @@
 					<div class="row">
 						<div class="col">
 							<ul>
-								<?php foreach($errors as $singleError): ?>
-									<li><?php echo($singleError); ?></li>
+								<?php foreach($errors as $single_error): ?>
+									<li><?php echo($single_error); ?></li>
 								<?php endforeach; ?>
 							</ul>
 						</div>
@@ -88,17 +88,17 @@
 						<form class="contanctForm" action="<?php get_permalink(); ?>" method="post">
 							<?php wp_nonce_field('wp_enquiry_form'); ?>
 							<div class="form-group">
-								<label for="userName">Full Name</label>
-								<input type="text" class="form-control" id="userName" name="userName"/>
+								<label for="user_name">Full Name</label>
+								<input type="text" class="form-control" id="userName" name="user_name" value=""/>
 							</div>
 							<div class="form-group">
-								<label for="userEmail">Email</label>
-								<input type="email" class="form-control" id="userEmail" name="userEmail"/>
+								<label for="email">Email</label>
+								<input type="email" class="form-control" id="userEmail" name="email" value=""/>
 							</div>
 
 							<div class="form-group">
-								<label for="reasonForContact">Why are you contacting us?</label>
-								<select class="form-control" name="reasonForContact">
+								<label for="contact_reason">Why are you contacting us?</label>
+								<select class="form-control" name="contact_reason">
 									<option>Choose an option</option>
 									<option value="I have a question">I have a question</option>
 									<option value="Booking an appointment">Booking an appointment</option>
@@ -107,13 +107,13 @@
 							</div>
 
 							<div class="form-group">
-								<label for="enquirySubject">Subject</label>
-								<input type="text" class="form-control" id="enquirySubject" name="enquirySubject"/>
+								<label for="enquiry_subject">Subject</label>
+								<input type="text" class="form-control" id="enquirySubject" name="enquiry_subject" value=""/>
 							</div>
 
 							<div class="form-group">
-								<label for="userMessage">Your Message</label>
-								<textarea name="userMessage" class="form-control" rows="8" cols="80"></textarea>
+								<label for="user_message">Your Message</label>
+								<textarea name="user_message" class="form-control" rows="8" cols="80"></textarea>
 							</div>
 
 							<div class="form-group submitBtnWrapper">

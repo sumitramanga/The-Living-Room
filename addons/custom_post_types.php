@@ -77,7 +77,7 @@ function add_enquiries(){
 		'menu_position' => 38,
 		'menu_icon' => 'dashicons-phone',
 		'supports' => array(
-			'title', 'editor'
+			'title'
 		),
 		'query_var' => true
 	);
