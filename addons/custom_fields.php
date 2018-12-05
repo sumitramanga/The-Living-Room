@@ -59,11 +59,17 @@ $metaboxes = array(
 		)
 	),
 	'previous_work' => array(
-		'title' => 'Previous Work',
-		'applicableto' => 'previous_work',
+		'title' => 'Previous Work Details',
+		'applicableto' => 'previous work',
 		'location' => 'normal',
 		'priority' => 'low',
-		'fields' => array()
+		'fields' => array(
+			'service_testimonial' => array(
+				'title' => 'Testimonial',
+				'type' => 'textarea',
+				'description' => 'A customers review on this specific service'
+			)
+		)
 	)
 );
 
@@ -136,6 +142,9 @@ function show_metaboxes($post, $args) {
 						$field_text = $custom_values[$id][0];
 					}
 					$output .= $field_text.'</textarea>';
+					var_dump($custom_values[$id]);
+					var_dump($id);
+
 				break;
 
 				default:
