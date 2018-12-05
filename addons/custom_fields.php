@@ -102,7 +102,7 @@ function show_metaboxes($post, $args) {
 				// for contact/enquries
 				case 'select':
 					$output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
-					$output .= '<select name="'.$id.'"><option>Chosen an option</option>';
+					$output .= '<select name="'.$id.'"><option value="'.$custom_values[$id][0].'">'.$custom_values[$id][0].'</option>';
 					$options = $field['options'];
 					foreach ($options as $option) {
 						$output .= '<option value="'.$option.'">'.$option.'<option>';
@@ -110,6 +110,7 @@ function show_metaboxes($post, $args) {
 					$output .= '</select><br>';
 				break;
 
+				// for enquiries
 				case 'email':
 					$output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
 					$output .= '<input type="email" name="'.$id.'" class="servicesInput" style="width:100%;" value="'.$custom_values[$id][0].'"><br>';
