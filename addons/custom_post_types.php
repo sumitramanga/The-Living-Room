@@ -85,3 +85,32 @@ function add_enquiries(){
 }
 
 add_action('init', 'add_enquiries');
+
+function add_work(){
+	// Adding labels to the custom type of services
+	$labels = array(
+		'name' => _x('Previous Work', 'post type name', 'thelivingroom'),
+		'singular_name' => _x('Previous Work', 'post types singluar name', 'thelivingroom'),
+		'new_item' => _x('Add a new piece of work', 'adding new enquiry', 'thelivingroom')
+	);
+
+	$args = array(
+		'labels' => $labels,
+		'description' => 'A custom post type for the company\'s work done in the past to present',
+		'public' => true,
+		'hirarchical' => true,
+		'exclude_from_search' => false,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'show_in_nav_menus' => false,
+		'menu_position' => 38,
+		'menu_icon' => 'dashicons-layout',
+		'supports' => array(
+			'title'
+		),
+		'query_var' => true
+	);
+	register_post_type('previous work', $args);
+}
+
+add_action('init', 'add_work');
