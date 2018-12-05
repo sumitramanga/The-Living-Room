@@ -60,7 +60,7 @@ $metaboxes = array(
 	),
 	'previous_work' => array(
 		'title' => 'Previous Work Details',
-		'applicableto' => 'previous work',
+		'applicableto' => 'previouswork',
 		'location' => 'normal',
 		'priority' => 'low',
 		'fields' => array(
@@ -142,9 +142,6 @@ function show_metaboxes($post, $args) {
 						$field_text = $custom_values[$id][0];
 					}
 					$output .= $field_text.'</textarea>';
-					var_dump($custom_values[$id]);
-					var_dump($id);
-
 				break;
 
 				default:
@@ -193,7 +190,6 @@ function save_metaboxes($post_id){
 					delete_post_meta($post_id, $id, $old_value);
 				}
 			}
-
 
 		}
 	}

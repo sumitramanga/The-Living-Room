@@ -114,7 +114,7 @@ function add_work(){
 		),
 		'query_var' => true
 	);
-	register_post_type('previous work', $args);
+	register_post_type('previousWork', $args);
 }
 
 add_action('init', 'add_work');
