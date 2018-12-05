@@ -111,7 +111,7 @@ function show_metaboxes($post, $args) {
 						}
 						$output .= '<option value="'.$option.'"'.$selected_value.'>'.$option.'</option>';
 					}
-					$output .= '</select>';
+					$output .= '</select><br>';
 				break;
 
 				// for enquiries
