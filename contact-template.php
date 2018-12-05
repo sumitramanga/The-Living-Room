@@ -89,35 +89,38 @@
 							<?php wp_nonce_field('wp_enquiry_form'); ?>
 							<div class="form-group">
 								<label for="user_name">Full Name</label>
-								<input type="text" class="form-control" id="userName" name="user_name" value=""/>
+								<!-- if form isnt sent to the database then keep the data sticky -->
+								<input type="text" class="form-control" id="userName" name="user_name" value="<?php if ($_POST && !empty($errors)): ?> <?php echo isset($_POST['user_name']) ? $_POST['user_name'] : '' ?> <?php endif; ?>"/>
 							</div>
 							<div class="form-group">
 								<label for="email">Email</label>
-								<input type="email" class="form-control" id="userEmail" name="email" value=""/>
+								<input type="email" class="form-control" id="userEmail" name="email" value="<?php if ($_POST && !empty($errors)): ?> <?php echo isset($_POST['email']) ? $_POST['email'] : '' ?> <?php endif; ?>"/>
 							</div>
 
 							<div class="form-group">
 								<label for="contact_reason">Why are you contacting us?</label>
 								<select class="form-control" name="contact_reason">
 									<option>Choose an option</option>
-									<option value="I have a question">I have a question</option>
-									<option value="Booking an appointment">Booking an appointment</option>
-									<option value="Wanting more information on your services">Wanting more information on your services</option>
+									<?php // if(option = selected): ?>
+									<?php // endif; ?>
+										<option value="I have a question">I have a question</option>
+										<option value="Booking an appointment">Booking an appointment</option>
+										<option value="Wanting more information on your services">Wanting more information on your services</option>
 								</select>
 							</div>
 
 							<div class="form-group">
 								<label for="enquiry_subject">Subject</label>
-								<input type="text" class="form-control" id="enquirySubject" name="enquiry_subject" value=""/>
+								<input type="text" class="form-control" id="enquirySubject" name="enquiry_subject" value="<?php if ($_POST && !empty($errors)): ?> <?php echo isset($_POST['enquiry_subject']) ? $_POST['enquiry_subject'] : '' ?> <?php endif; ?>"/>
 							</div>
 
 							<div class="form-group">
 								<label for="user_message">Your Message</label>
-								<textarea name="user_message" class="form-control" rows="8" cols="80"></textarea>
+								<textarea name="user_message" class="form-control" rows="8" cols="80"><?php if ($_POST && !empty($errors)): ?> <?php echo isset($_POST['user_message']) ? $_POST['user_message'] : '' ?> <?php endif; ?></textarea>
 							</div>
 
 							<div class="form-group submitBtnWrapper">
-								  <button type="submit" class="btn btn-primary">Submit</button>
+								<button type="submit" class="btn btn-primary">Submit</button>
 							</div>
 						</form>
 					</div>
