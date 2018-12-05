@@ -106,7 +106,7 @@ function add_work(){
 		'menu_position' => 38,
 		'menu_icon' => 'dashicons-layout',
 		'supports' => array(
-			'title'
+			'title', 'editor', 'thumbnail'
 		),
 		'query_var' => true
 	);
