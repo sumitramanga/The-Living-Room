@@ -102,10 +102,14 @@ function show_metaboxes($post, $args) {
 				// for contact/enquries
 				case 'select':
 					$output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
-					$output .= '<select name="'.$id.'"><option value="'.$custom_values[$id][0].'">'.$custom_values[$id][0].'</option>';
+					$output .= '<select name="'.$id.'"><option value="">Choose an option</option>';
 					$options = $field['options'];
 					foreach ($options as $option) {
-						$output .= '<option value="'.$option.'">'.$option.'</option>';
+						$selected_value = '';
+						if ($custom_values['contact_reason']['0'] == $option) {
+							$selected_value = 'selected="selected"';
+						}
+						$output .= '<option value="'.$option.'"'.$selected_value.'>'.$option.'</option>';
 					}
 					$output .= '</select>';
 				break;
