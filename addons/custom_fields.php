@@ -57,6 +57,13 @@ $metaboxes = array(
 				'description' => 'The users message'
 			)
 		)
+	),
+	'previous_work' => array(
+		'title' => 'Previous Work',
+		'applicableto' => 'previous_work',
+		'location' => 'normal',
+		'priority' => 'low',
+		'fields' => array()
 	)
 );
 

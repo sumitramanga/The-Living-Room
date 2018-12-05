@@ -4,7 +4,8 @@ function add_services() {
 	$labels = array(
 		'name' => _x('Services', 'post type name', 'thelivingroom'),
 		'singular_name' => _x('Service', 'post types singluar name', 'thelivingroom'),
-		'new_item' => _x('Add new service', 'adding new service', 'thelivingroom')
+		'add_new_item' => _x('Add new service', 'adding new service', 'thelivingroom'),
+		'edit_item' => _x('Edit your service', 'editing service', 'thelivingroom')
 	);
 
 	$args = array(
@@ -16,7 +17,7 @@ function add_services() {
 		'show_ui' => true,
 		'show_in_menu' => true,
 		'show_in_nav_menus' => false,
-		'menu_position' => 32,
+		'menu_position' => 30,
 		'menu_icon' => 'dashicons-smiley',
 		'supports' => array(
 			'title', 'thumbnail'
@@ -33,7 +34,8 @@ function add_staff(){
 	$labels = array(
 		'name' => _x('Staff', 'post type name', 'thelivingroom'),
 		'singular_name' => _x('Staff', 'post types singluar name', 'thelivingroom'),
-		'new_item' => _x('Add a new staff', 'adding new staff', 'thelivingroom')
+		'add_new_item' => _x('Add a new staff', 'adding new staff', 'thelivingroom'),
+		'edit_item' => _x('Edit staff member\'s details', 'editing staff member', 'thelivingroom')
 	);
 
 	$args = array(
@@ -45,7 +47,7 @@ function add_staff(){
 		'show_ui' => true,
 		'show_in_menu' => true,
 		'show_in_nav_menus' => false,
-		'menu_position' => 35,
+		'menu_position' => 31,
 		'menu_icon' => 'dashicons-id-alt',
 		'supports' => array(
 			'title', 'editor', 'thumbnail'
@@ -62,7 +64,8 @@ function add_enquiries(){
 	$labels = array(
 		'name' => _x('Enquiries', 'post type name', 'thelivingroom'),
 		'singular_name' => _x('Enquiry', 'post types singluar name', 'thelivingroom'),
-		'new_item' => _x('Add a new enquiry', 'adding new enquiry', 'thelivingroom')
+		'add_new_item' => _x('Add a new enquiry', 'adding new enquiry', 'thelivingroom'),
+		'edit_item' => _x('Edit an enquiry', 'editing enquiry', 'thelivingroom')
 	);
 
 	$args = array(
@@ -74,7 +77,7 @@ function add_enquiries(){
 		'show_ui' => true,
 		'show_in_menu' => true,
 		'show_in_nav_menus' => false,
-		'menu_position' => 38,
+		'menu_position' => 33,
 		'menu_icon' => 'dashicons-phone',
 		'supports' => array(
 			'title'
@@ -91,7 +94,8 @@ function add_work(){
 	$labels = array(
 		'name' => _x('Previous Work', 'post type name', 'thelivingroom'),
 		'singular_name' => _x('Previous Work', 'post types singluar name', 'thelivingroom'),
-		'new_item' => _x('Add a new piece of work', 'adding new enquiry', 'thelivingroom')
+		'add_new_item' => _x('Add a new piece of work', 'work', 'thelivingroom'),
+		'edit_item' => _x('Edit work', 'work', 'thelivingroom')
 	);
 
 	$args = array(
@@ -103,7 +107,7 @@ function add_work(){
 		'show_ui' => true,
 		'show_in_menu' => true,
 		'show_in_nav_menus' => false,
-		'menu_position' => 38,
+		'menu_position' => 32,
 		'menu_icon' => 'dashicons-layout',
 		'supports' => array(
 			'title', 'editor', 'thumbnail'
