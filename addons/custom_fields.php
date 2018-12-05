@@ -105,9 +105,9 @@ function show_metaboxes($post, $args) {
 					$output .= '<select name="'.$id.'"><option value="'.$custom_values[$id][0].'">'.$custom_values[$id][0].'</option>';
 					$options = $field['options'];
 					foreach ($options as $option) {
-						$output .= '<option value="'.$option.'">'.$option.'<option>';
+						$output .= '<option value="'.$option.'">'.$option.'</option>';
 					}
-					$output .= '</select><br>';
+					$output .= '</select>';
 				break;
 
 				// for enquiries
