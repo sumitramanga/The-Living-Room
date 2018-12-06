@@ -25,11 +25,12 @@
 
 						<?php if ( strlen($customer_testimonial) > 1 ): ?>
 							<p><?php echo $customer_testimonial; ?></p>
-							<a href="<?php the_permalink(); ?>">View more...</a>
 						<?php endif; ?>
 
-						<p><?php the_title(); ?></p>
-						<p><?php the_content(); ?></p>
+						<h3><?php the_title(); ?></h3>
+
+						<p><?php echo wp_trim_words( get_the_content(), 50, '' ); ?> <span><a href="<?php the_permalink(); ?>">View more...</a></span> </p>
+
 						<?php if(has_post_thumbnail()): ?>
 							<?php the_post_thumbnail('medium', ['class' => 'serviceImg', 'alt' => 'thumbnail-image']); ?>
 						<?php endif; ?>
@@ -41,7 +42,5 @@
 
 		<?php endwhile; ?>
 	<?php endif; ?>
-
-	<h1>our previous work template</h1>
 
 <?php get_footer(); ?>
