@@ -52,7 +52,31 @@
 	<?php endif; ?>
 
 	<!-- Testimonials. WILL DO AFTER IT'S DONE ON THE OTHER PAGES -->
-	<div class="featuredReviews"></div>
+	<div class="featuredReviews">
+		<?php if (have_posts()): ?>
+			<?php while(have_posts()): the_post(); ?>
+				<?php $args = array(
+					'post_type' => 'previouswork',
+					'posts_per_page' => 3
+				) ?>
+
+				<?php $all_previouswork = new WP_Query($args); ?>
+
+				<div class="container">
+					<?php if( $all_previouswork->have_posts() ): ?>
+						<?php while($all_previouswork->have_posts()): $all_previouswork->the_post(); ?>
+
+							<?php $testimonial = get_post_meta($id, 'service_testimonial', true); ?>
+							<p><?php echo $testimonial; ?></p>
+
+							<hr>
+						<?php endwhile; ?>
+					<?php endif; ?>
+				</div>
+			<?php endwhile; ?>
+		<?php endif; ?>
+
+	</div>
 </div>
 
 
