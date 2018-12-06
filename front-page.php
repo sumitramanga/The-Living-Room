@@ -1,6 +1,6 @@
 <?php get_header('front'); ?>
-
 <div class="container main containerWidthMain">
+
 	<!-- Carousel/landing page content -->
 	<div class="landingContent">
 		<div class="swiper-container">
@@ -42,45 +42,50 @@
 		<div class="container secondaryCont">
 			<div class="row secHomeRow">
 				<div class="col-sm-12 col-md-6 secHomeImgWrapper secColWidth" style="background-color: white;">
-					<div class="secHomeImg" style="background-image:url(<?php echo $secContentImg ?>);"></div>
+					<div class="secHomeImg" style="background-image:url(<?php echo $secContentImg; ?>);"></div>
 				</div>
 				<div class="col-sm-12 col-md-6 secHomeTextWrapper secColWidth">
-					<p class="secHomeText"><?php echo $secContentText ?></p>
+					<p class="secHomeText"><?php echo $secContentText; ?></p>
 				</div>
 			</div>
 		</div>
 	<?php endif; ?>
 
-	<!-- Testimonials. WILL DO AFTER IT'S DONE ON THE OTHER PAGES -->
-	<div class="featuredReviews">
-		<?php if (have_posts()): ?>
-			<?php while(have_posts()): the_post(); ?>
-				<?php $args = array(
-					'post_type' => 'previouswork',
-					'posts_per_page' => 3
-				) ?>
+	<!-- Testimonials -->
+	<div class="container">
+		<div class="row">
 
-				<?php $all_previouswork = new WP_Query($args); ?>
+			<?php $args = array(
+				'post_type' => 'previouswork',
+				'posts_per_page' => 3
+			) ?>
 
-				<div class="container">
-					<?php if( $all_previouswork->have_posts() ): ?>
-						<?php while($all_previouswork->have_posts()): $all_previouswork->the_post(); ?>
+			<?php $all_previouswork = new WP_Query($args); ?>
 
-							<?php
-								$testimonial = get_post_meta($id, 'service_testimonial', true);
-								$customer_name = get_post_meta($id, 'customer_name', true);
-							 ?>
-							<p><?php echo $testimonial; ?></p>
-							<p><?php echo $customer_name; ?></p>
-							<hr>
-						<?php endwhile; ?>
-					<?php endif; ?>
-				</div>
-			<?php endwhile; ?>
-		<?php endif; ?>
+			<?php if( $all_previouswork->have_posts() ): ?>
+				<?php while( $all_previouswork->have_posts() ): $all_previouswork->the_post(); ?>
 
-	</div>
-</div>
+					<?php
+						$id = get_the_id();
+						$testimonial = get_post_meta($id, 'service_testimonial', true);
+						$customer_name = get_post_meta($id, 'customer_name', true);
 
+						if (has_post_thumbnail()) {
+							$image = get_the_post_thumbnail_url($id);
+						}
+					 ?>
 
+					<div class="col-sm-12 col-md-6 col-lg-4 homeReviewsCol secHomeImg" style="background-image:url(<?php echo $image; ?>);">
+						<div class="row flex-column justify-content-center justify-content-center reviewWrapper">
+							<div class="col- align-self-center"><p class="homeReviewtxt"><?php echo $testimonial; ?></p></div>
+							<div class="col- align-self-center"><p class="homeCusName"><?php echo $customer_name; ?></p></div>
+						</div>
+					</div>
+					<hr/>
+
+				<?php endwhile; ?>
+			<?php endif; ?>
+
+			</div>
+		</div>
 <?php get_footer(); ?>

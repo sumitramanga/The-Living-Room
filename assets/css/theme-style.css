@@ -144,22 +144,6 @@ body {
 	text-transform: uppercase;
 }
 
-.footer {
-	font-family: 'Cabin', sans-serif;
-	margin: 4em 0 2em;
-	text-align: center;
-}
-
-.copyright {
-	font-weight: bold;
-	text-transform: uppercase;
-}
-
-.socialMeds {
-	color: #4E5F6E;
-	text-transform: lowercase;
-}
-
 /* Secondary Content home */
 
 .secHomeRow{
@@ -195,6 +179,40 @@ body {
 	text-align: center;
 	top: 50%;
 	transform: translateY(-50%);
+}
+
+/* TESTIMONIALS */
+
+.homeReviewsCol {
+	margin-bottom: 1em;
+	padding: 0;
+	height: 290px;
+	width: 100%;
+}
+
+.reviewWrapper {
+	background-color: rgba(255,255,255,0.7);
+	height: 100%;
+	margin: 0;
+	text-align: center;
+	width: 100%;
+}
+
+/* FOOTER */
+.footer {
+	font-family: 'Cabin', sans-serif;
+	margin: 4em 0 2em;
+	text-align: center;
+}
+
+.copyright {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.socialMeds {
+	color: #4E5F6E;
+	text-transform: lowercase;
 }
 
 
