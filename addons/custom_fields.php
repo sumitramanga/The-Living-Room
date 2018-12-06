@@ -59,13 +59,13 @@ $metaboxes = array(
 		)
 	),
 	'previous_work' => array(
-		'title' => 'Previous Work Details',
+		'title' => 'Testimonial',
 		'applicableto' => 'previouswork',
 		'location' => 'normal',
 		'priority' => 'low',
 		'fields' => array(
 			'service_testimonial' => array(
-				'title' => 'Testimonial',
+				'title' => 'Quote',
 				'type' => 'textarea',
 				'description' => 'A customers review on this specific service'
 			)
