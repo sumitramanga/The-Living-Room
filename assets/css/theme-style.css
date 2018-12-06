@@ -263,6 +263,25 @@ body {
 	text-align: center;
 }
 
+/* ABOUT */
+
+.bannerTitleWrapCon {
+	height: 100%;
+	text-align: center;
+}
+
+.bannerOpac {
+	background-color: rgba(255,255,255,0.6);
+	max-width: none;
+}
+
+.bannerTitle {
+	font-family: 'Playfair Display', serif;
+	text-transform: uppercase;
+    font-weight: 800;
+}
+
+
 @media only screen and (min-width: 576px) {
 
 	.secColWidth {

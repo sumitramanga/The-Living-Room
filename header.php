@@ -65,7 +65,14 @@
 			<div id="headerBanner" class="bg-dark headerBanner" style="background-image:url(<?php echo $banner_image ?>);">
 				<?php if (have_posts()): ?>
 					<?php while (have_posts()): the_post(); ?>
-						<h1><?php the_title(); ?></h1>
+						<div class="container bannerOpac bannerTitleWrapCon">
+							<div class="row bannerTitleWrapCon">
+								<div class="col-12 align-self-center">
+									<h1 class="bannerTitle"><?php the_title(); ?></h1>
+								</div>
+							</div>
+						</div>
+
 					<?php endwhile; ?>
 				<?php endif; ?>
 			</div>
