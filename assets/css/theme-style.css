@@ -98,7 +98,7 @@ body {
 
 .headerBanner {
 	height: 300px;
-	width: 100%;
+	margin: 0 1em;
 	max-width: 100%;
 	background-position: center right;
 	background-size: cover;
@@ -263,7 +263,7 @@ body {
 	text-align: center;
 }
 
-/* ABOUT */
+/* ABOUT ---------------------------------------------------------- */
 
 .bannerTitleWrapCon {
 	height: 100%;
@@ -279,6 +279,51 @@ body {
 	font-family: 'Playfair Display', serif;
 	text-transform: uppercase;
     font-weight: 800;
+}
+
+.aboutTextCon {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.aboutText {
+	font-family: 'Cabin', sans-serif;
+	font-size: 0.9em;
+}
+
+.teamTitle{
+	font-family: 'Playfair Display', serif;
+	font-size: 1.8em;
+	font-weight: 700;
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 1em;
+}
+
+.imgStaffWrap {
+	height: 209px;
+	width: 100%;
+	overflow: hidden;
+	background-size: contain;
+}
+
+.indivStaffImg {
+	text-align: center;
+	width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+.staffName {
+	font-family: 'Cabin', sans-serif;
+	font-size: 1.5em;
+	font-weight: 500;
+	margin-top: 0.6em;
+	text-transform: uppercase;
+}
+
+.staffDesc {
+	font-family: 'Cabin', sans-serif;
 }
 
 
@@ -322,7 +367,21 @@ body {
 		padding-right: 3em;
 		max-width: 720px;
 	}
-}
+
+	.imgStaffWrap {
+		height: auto;
+	}
+
+	.aboutTextCon {
+		max-width: 730px;
+		margin-top: 2em;
+		margin-bottom: 4em;
+	}
+
+	.aboutTextCol {
+		background-color: white;
+		padding: 2.2em;
+	}
 
 @media only screen and (min-width: 991.98px) {
 	.navBar {

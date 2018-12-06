@@ -38,7 +38,7 @@ function add_custom_logo(){
 
 add_action('init', 'add_custom_logo');
 
-// add_image_size('logo_size', 0, 50, true);
+add_image_size('staff_size', 0, 700, true);
 add_theme_support('post-thumbnails');
 
 require get_parent_theme_file_path('./addons/custom_customizer.php');

@@ -76,7 +76,7 @@
 					 ?>
 
 					<div class="col-sm-12 col-md-6 col-lg-4 homeReviewsCol secHomeImg" style="background-image:url(<?php echo $image; ?>);">
-						<div class="row flex-column justify-content-center justify-content-center reviewWrapper">
+						<div class="row flex-column justify-content-center reviewWrapper">
 							<div class="col- align-self-center quoteIconsWrap quoteIconLeftWrap">
 								<i class="fas fa-quote-left quoteIcons quoteIconLeft"></i>
 							</div>
