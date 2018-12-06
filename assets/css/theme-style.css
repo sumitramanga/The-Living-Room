@@ -198,6 +198,43 @@ body {
 	width: 100%;
 }
 
+.quoteIconLeftWrap {
+	margin-bottom: 2em;
+}
+
+.quoteIconLeft{
+	text-align: left;
+	float: left;
+}
+
+.quoteIconRightWrap {
+	margin-top: 2em;
+}
+
+.quoteIconsWrap {
+	width: 85%;
+}
+
+.quoteIcons {
+	font-size: 1.3em;
+}
+
+.quoteIconRight{
+	text-align: right;
+	float: right;
+}
+
+.homeReviewTxt {
+	font-family: 'Cabin', sans-serif;
+	font-size: 1em;
+	padding: 0 1em;
+}
+
+.homeCusName {
+	font-family: 'Playfair Display', serif;
+	text-transform: capitalize;
+}
+
 /* FOOTER */
 .footer {
 	font-family: 'Cabin', sans-serif;
@@ -238,6 +275,12 @@ body {
 
 	.carouselTopLayer {
 		width: 500px;
+	}
+
+	.homeReviewsCol {
+		max-width: 290px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 }
 
@@ -293,7 +336,15 @@ body {
 		max-height: 470px;
 	}
 
+	/* testimonials on home */
 	.contactContainer {
 		max-width: 720px;
 	}
+
+	.homeReviewsCol {
+		max-width: 351px;
+	    height: 351px;
+	}
+
+
 }

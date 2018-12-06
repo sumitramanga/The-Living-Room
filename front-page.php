@@ -53,7 +53,7 @@
 
 	<!-- Testimonials -->
 	<div class="container">
-		<div class="row">
+		<div class="row justify-content-md-center d-md-flex-column testimonialLayoutDesktop">
 
 			<?php $args = array(
 				'post_type' => 'previouswork',
@@ -77,11 +77,20 @@
 
 					<div class="col-sm-12 col-md-6 col-lg-4 homeReviewsCol secHomeImg" style="background-image:url(<?php echo $image; ?>);">
 						<div class="row flex-column justify-content-center justify-content-center reviewWrapper">
-							<div class="col- align-self-center"><p class="homeReviewtxt"><?php echo $testimonial; ?></p></div>
-							<div class="col- align-self-center"><p class="homeCusName"><?php echo $customer_name; ?></p></div>
+							<div class="col- align-self-center quoteIconsWrap quoteIconLeftWrap">
+								<i class="fas fa-quote-left quoteIcons quoteIconLeft"></i>
+							</div>
+							<div class="col- align-self-center">
+								<p class="homeReviewTxt"><?php echo $testimonial; ?></p>
+							</div>
+							<div class="col- align-self-center">
+								<p class="homeCusName"><?php echo $customer_name; ?></p>
+							</div>
+							<div class="col- align-self-center quoteIconsWrap quoteIconRightWrap">
+								<i class="fas fa-quote-right quoteIcons quoteIconRight"></i>
+							</div>
 						</div>
 					</div>
-					<hr/>
 
 				<?php endwhile; ?>
 			<?php endif; ?>
