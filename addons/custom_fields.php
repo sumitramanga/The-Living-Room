@@ -64,10 +64,20 @@ $metaboxes = array(
 		'location' => 'normal',
 		'priority' => 'low',
 		'fields' => array(
+			'icon' => array(
+				'title' => 'Icon',
+				'type' => 'radio',
+				'options' => array('Wallpaper', 'Doors', 'Sofa')
+			),
 			'service_testimonial' => array(
 				'title' => 'Quote',
 				'type' => 'textarea',
 				'description' => 'A customers review on this specific service'
+			),
+			'customer_name' => array(
+				'title' => 'Customer Name',
+				'type' => 'text',
+				'description' => 'Name of customer who has given the review'
 			)
 		)
 	)

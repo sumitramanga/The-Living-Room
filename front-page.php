@@ -66,9 +66,12 @@
 					<?php if( $all_previouswork->have_posts() ): ?>
 						<?php while($all_previouswork->have_posts()): $all_previouswork->the_post(); ?>
 
-							<?php $testimonial = get_post_meta($id, 'service_testimonial', true); ?>
+							<?php
+								$testimonial = get_post_meta($id, 'service_testimonial', true);
+								$customer_name = get_post_meta($id, 'customer_name', true);
+							 ?>
 							<p><?php echo $testimonial; ?></p>
-
+							<p><?php echo $customer_name; ?></p>
 							<hr>
 						<?php endwhile; ?>
 					<?php endif; ?>

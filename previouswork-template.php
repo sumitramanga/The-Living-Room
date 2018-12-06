@@ -21,6 +21,7 @@
 						<?php
 							$id = get_the_id();
 							$customer_testimonial = get_post_meta($id, 'service_testimonial', true);
+							$work_icon = get_post_meta($id, 'icon', true);
   						 ?>
 
 						<?php if ( strlen($customer_testimonial) > 1 ): ?>
@@ -34,6 +35,8 @@
 						<?php if(has_post_thumbnail()): ?>
 							<?php the_post_thumbnail('medium', ['class' => 'serviceImg', 'alt' => 'thumbnail-image']); ?>
 						<?php endif; ?>
+
+						<div class="icon"><?php echo $work_icon ?></div>
 
 					<?php endwhile; ?>
 				<?php endif; ?>
