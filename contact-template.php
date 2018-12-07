@@ -60,6 +60,7 @@
 
 	<?php if(have_posts()): ?>
 		<?php while(have_posts()): the_post(); ?>
+
 			<div class="container contactContainer">
 				<?php if (strlen(get_the_content()) > 0): ?>
 					<div class="contactBlurbWrap">
@@ -69,11 +70,12 @@
 
 
 				<?php if ($_POST && !empty($errors)): ?>
-					<div class="row">
+					<div class="row errorMsgWrap">
 						<div class="col">
+							<h4 class="errorMessage">Looks like something went wrong. Your enquiry did not send through</h4>
 							<ul>
 								<?php foreach($errors as $single_error): ?>
-									<li><?php echo($single_error); ?></li>
+									<li class="singleError"><?php echo($single_error); ?></li>
 								<?php endforeach; ?>
 							</ul>
 						</div>
