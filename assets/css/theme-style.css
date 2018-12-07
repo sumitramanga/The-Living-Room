@@ -333,13 +333,13 @@ body {
 }
 
 .serviceIconWrap {
-	font-size: 2em;
+	font-size: 2.3em;
 }
 
 .serviceName {
 	font-size: 1.3em;
 	font-family: 'Playfair Display', serif;
-	margin-top: 1em;
+	margin-top: 0.5em;
 }
 
 .serviceDets {
@@ -347,11 +347,33 @@ body {
 }
 
 .serviceReview {
+	font-weight: 900;
 	font-style: italic;
 }
 
 #serviceDets {
 	height: auto;
+}
+
+/* PREVIOUS WORK */
+
+.workIcon {
+	width: 49px;
+	height: 49px;
+    background-size: contain;
+}
+
+.viewMoreBtn:link {
+	color: #4E5F6E;
+	font-weight: 900;
+}
+
+.viewMoreBtn {
+	color: #4E5F6E;
+}
+
+.viewMoreBtn:hover {
+	color: #4E5F6E;
 }
 
 @media only screen and (min-width: 576px) {
@@ -451,4 +473,7 @@ body {
 	    height: 351px;
 	}
 
+	.serviceName {
+    	font-size: 1.7em;
+	}
 }

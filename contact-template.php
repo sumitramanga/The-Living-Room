@@ -53,9 +53,7 @@
 			wp_insert_post($args);
 			$success_message = 'Thank you for your message. We will get back to you shortly';
 		}
-
 	}
-
  ?>
 
 <?php get_header(); ?>
@@ -63,9 +61,12 @@
 	<?php if(have_posts()): ?>
 		<?php while(have_posts()): the_post(); ?>
 			<div class="container contactContainer">
-				<div class="contactBlurb">
-					<p><?php the_content(); ?></p>
-				</div>
+				<?php if (strlen(get_the_content()) > 0): ?>
+					<div class="contactBlurb">
+						<p><?php echo the_content(); ?></p>
+					</div>
+				<?php endif; ?>
+
 
 				<?php if ($_POST && !empty($errors)): ?>
 					<div class="row">

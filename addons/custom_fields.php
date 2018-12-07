@@ -67,7 +67,7 @@ $metaboxes = array(
 			'icon' => array(
 				'title' => 'Icon',
 				'type' => 'radio',
-				'options' => array('Wallpaper', 'Doors', 'Sofa')
+				'options' => array('Wallpaper', 'Window', 'Sofa', 'Lamp')
 			),
 			'service_testimonial' => array(
 				'title' => 'Quote',
