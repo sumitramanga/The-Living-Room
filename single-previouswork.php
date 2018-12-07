@@ -30,10 +30,22 @@
 			<?php endwhile; ?>
 		<?php endif; ?>
 
-		<div><?php echo $title; ?></div>
-		<div><?php echo $desc; ?></div>
-		<div style="background-image: url(<?php echo $post_img; ?>); width:100%; height: 100px; background-size: cover;"></div>
-		<div><?php echo $singleReview; ?></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div style="background-image: url(<?php echo $post_img; ?>); width:100%; height: 100px; background-size: cover;"></div>
+				</div>
+				<div class="col-12">
+					<h3 class="staffName"><?php echo $title; ?></h3>
+					<p class="serviceReview">"<?php echo $singleReview; ?>"</p>
+					<p class="staffDesc"><?php echo $desc; ?></p>
+				</div>
+			</div>
+		</div>
+
+
+
+
 	<?php endif; ?>
 
 <?php get_footer(); ?>
