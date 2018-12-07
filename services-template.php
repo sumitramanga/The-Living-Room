@@ -25,7 +25,7 @@
 									$image = get_the_post_thumbnail_url($id);
 								}
 	  						 ?>
-							<div class="col-sm-12 col-md-6 flex-row">
+							<div class="col-sm-12 col-md-6 col-lg-4 flex-row">
 								<div class="container">
 									<div class="row">
 										<div class="col-sm-12 col-md-12 col-lg-12 homeReviewsCol secHomeImg" style="background-image:url(<?php echo $image; ?>);">
