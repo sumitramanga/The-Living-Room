@@ -11,6 +11,10 @@ body {
 }
 
 /* MENU -------------------------------------------------------------------- */
+.navbar {
+	background-color: #F9F5F4;
+}
+
 .navBar {
 	width: 100vw;
 	background-color: #F9F5F4;
@@ -98,7 +102,8 @@ body {
 
 .headerBanner {
 	height: 300px;
-	margin: 0 1em;
+	margin-top: 2.8em;
+	margin-bottom: 1em;
 	max-width: 100%;
 	background-position: center right;
 	background-size: cover;
@@ -108,7 +113,7 @@ body {
 
 /* HOME -------------------------------------------------------------------- */
 .main {
-	/* margin-top: 4em; */
+	margin-top: 2.7em;
 }
 
 .swiper-wrapper {
@@ -233,6 +238,7 @@ body {
 .homeCusName {
 	font-family: 'Playfair Display', serif;
 	text-transform: capitalize;
+	font-weight: 600;
 }
 
 /* FOOTER */
@@ -411,6 +417,15 @@ body {
 	height: 300px;
 	background-size: cover;
 	background-position: center;
+}
+
+.prevWorkFormTitle {
+	font-family: 'Cabin', sans-serif;
+	font-size: 1.5em;
+}
+
+.prevWorkFormDesc {
+	font-family: 'Cabin', sans-serif;
 }
 
 .enquirySubject {

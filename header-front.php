@@ -15,7 +15,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Cabin:400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
 	</head>
 	<body>
-		<div class="navbar navbar-expand-lg">
+		<div class="navbar fixed-top navbar-expand-lg">
 			<div class="navBar">
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
 					<div class="navIcon">

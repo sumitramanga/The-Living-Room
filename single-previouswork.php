@@ -105,8 +105,8 @@
 					<p class="staffDesc"><?php echo $desc; ?></p>
 				</div>
 				<div class="col-12 col-sm-12 col-md-5 col-lg-5">
-					<h3>Want this service?</h3>
-
+					<h3 class="prevWorkFormTitle">Want this service?</h3>
+					<p class="prevWorkFormDesc">Flick us an appointment and we'll glady get back to you!</p>
 					<?php if ($_POST && !empty($errors)): ?>
 						<div class="row errorMsgWrap">
 							<div class="col">
