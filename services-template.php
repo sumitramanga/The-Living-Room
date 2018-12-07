@@ -10,39 +10,52 @@
 
 			<?php $all_services = new WP_Query($args); ?>
 
-			<div class="container">
-				<?php if( $all_services->have_posts() ): ?>
-					<?php while($all_services->have_posts()): $all_services->the_post(); ?>
+			<div class="container servicesCon">
+				<div class="row">
+					<?php if( $all_services->have_posts() ): ?>
+						<?php while($all_services->have_posts()): $all_services->the_post(); ?>
 
-						<!-- title for the specific service type -->
-						<div class=""><?php the_title(); ?></div>
+							<?php
+								$id = get_the_id();
+								$icon_type = get_post_meta($id, 'icon', true);
+								$description = get_post_meta($id, 'description', true);
+								$testimonial = get_post_meta($id, 'testimonial', true);
 
-						<!-- Echoing the icon type name -->
-						<?php
-							$id = get_the_id();
-							$icon_type = get_post_meta($id, 'icon', true);
-							$description = get_post_meta($id, 'description', true);
-							$testimonial = get_post_meta($id, 'testimonial', true);
-  						 ?>
+								if (has_post_thumbnail()) {
+									$image = get_the_post_thumbnail_url($id);
+								}
+	  						 ?>
+							<div class="col-sm-12 col-md-6 flex-row">
+								<div class="container">
+									<div class="row">
+										<div class="col-sm-12 col-md-12 col-lg-12 homeReviewsCol secHomeImg" style="background-image:url(<?php echo $image; ?>);">
+											<div class="row flex-column justify-content-center reviewWrapper">
+												<div class="col- align-self-center serviceIconWrap">
+													<?php if ( !empty($icon_type) ): ?>
+														<i class="fas fa-<?php echo strtolower($icon_type); ?>"></i>
+													<?php endif; ?>
+												</div>
+												<div class="col- align-self-center serviceNameWrap">
+													<p class="serviceName"><?php echo get_the_title(); ?></p>
+												</div>
+											</div>
+										</div>
 
-						<?php if(has_post_thumbnail()): ?>
-							<?php the_post_thumbnail('medium', ['class' => 'serviceImg', 'alt' => 'thumbnail-image']); ?>
-						<?php endif; ?>
+										<div class="col-sm-12 col-md-12 col-lg-12 homeReviewsCol serviceDets" id="serviceDets">
+											<?php if ( strlen($description) > 1 ): ?>
+												<p><?php echo $description; ?></p>
+											<?php endif; ?>
 
-						<?php if ( !empty($icon_type) ): ?>
-							<i class="fas fa-<?php echo strtolower($icon_type); ?>"></i>
-						<?php endif; ?>
-
-						<?php if ( strlen($description) > 1 ): ?>
-							<p><?php echo $description; ?></p>
-						<?php endif; ?>
-
-						<?php if ( strlen($testimonial) > 1 ): ?>
-							<p><?php echo $testimonial; ?></p>
-						<?php endif; ?>
-
-					<?php endwhile; ?>
-				<?php endif; ?>
+											<?php if ( strlen($testimonial) > 1 ): ?>
+												<p class="serviceReview">"<?php echo $testimonial; ?>"</p>
+											<?php endif; ?>
+										</div>
+									</div>
+								</div>
+							</div>
+						<?php endwhile; ?>
+					<?php endif; ?>
+				</div>
 			</div>
 		<?php endwhile; ?>
 	<?php endif; ?>

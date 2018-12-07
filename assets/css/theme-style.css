@@ -326,6 +326,33 @@ body {
 	font-family: 'Cabin', sans-serif;
 }
 
+/* SERVICES */
+
+.servicesCon {
+	margin-top: 2em;
+}
+
+.serviceIconWrap {
+	font-size: 2em;
+}
+
+.serviceName {
+	font-size: 1.3em;
+	font-family: 'Playfair Display', serif;
+	margin-top: 1em;
+}
+
+.serviceDets {
+	font-family: 'Cabin', sans-serif;
+}
+
+.serviceReview {
+	font-style: italic;
+}
+
+#serviceDets {
+	height: auto;
+}
 
 @media only screen and (min-width: 576px) {
 
@@ -423,6 +450,5 @@ body {
 		max-width: 351px;
 	    height: 351px;
 	}
-
 
 }
