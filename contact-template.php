@@ -62,8 +62,8 @@
 		<?php while(have_posts()): the_post(); ?>
 			<div class="container contactContainer">
 				<?php if (strlen(get_the_content()) > 0): ?>
-					<div class="contactBlurb">
-						<p><?php echo the_content(); ?></p>
+					<div class="contactBlurbWrap">
+						<p class="contactBlurb"><?php echo get_the_content(); ?></p>
 					</div>
 				<?php endif; ?>
 
@@ -102,8 +102,6 @@
 								<label for="contact_reason">Why are you contacting us?</label>
 								<select class="form-control" name="contact_reason">
 									<option>Choose an option</option>
-									<?php // if(option = selected): ?>
-									<?php // endif; ?>
 										<option value="I have a question">I have a question</option>
 										<option value="Booking an appointment">Booking an appointment</option>
 										<option value="Wanting more information on your services">Wanting more information on your services</option>
@@ -121,7 +119,7 @@
 							</div>
 
 							<div class="form-group submitBtnWrapper">
-								<button type="submit" class="btn btn-primary">Submit</button>
+								<button type="submit" class="btn submitBtn">Submit</button>
 							</div>
 						</form>
 					</div>

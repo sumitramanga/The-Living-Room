@@ -1,7 +1,7 @@
 		<div class="footer">
 			<p class="copyright"><?php bloginfo( 'name' ) ?> ©</p>
 			<div class="socialmedia">
-				<a href="<?php echo get_page_link( get_page_by_title( 'blog' )->ID ); ?>" class="socialMeds">blog |</a>
+				<!-- <a href="<?php // echo get_page_link( get_page_by_title( 'blog' )->ID ); ?>" class="socialMeds">blog |</a> -->
 
 				<?php
 					$social_pint = get_theme_mod( 'pinterest_link_setting' );

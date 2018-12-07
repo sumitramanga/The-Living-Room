@@ -263,6 +263,28 @@ body {
 	text-align: center;
 }
 
+.contactBlurb {
+	font-family: 'Cabin', sans-serif;
+	font-size: 1em;
+	margin: 1.9em 0 2em;
+	text-align: center;
+}
+
+.form-group{
+	font-family: 'Cabin', sans-serif;
+	font-size: 1em;
+}
+
+.submitBtn {
+	border: 2px solid #4E5F6E;
+	border-radius: 0;
+	color: #4E5F6E;
+	background-color: transparent;
+	font-weight: 600;
+	padding-left: 2.6em;
+	padding-right: 2.6em;
+}
+
 /* ABOUT ---------------------------------------------------------- */
 
 .bannerTitleWrapCon {
@@ -340,6 +362,7 @@ body {
 	font-size: 1.3em;
 	font-family: 'Playfair Display', serif;
 	margin-top: 0.5em;
+	text-transform: capitalize;
 }
 
 .serviceDets {
