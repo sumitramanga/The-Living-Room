@@ -9,7 +9,7 @@ body {
 }
 
 .navBar {
-	width: 100vw;
+	width: 100%;
 	background-color: #F9F5F4;
 }
 
@@ -44,7 +44,7 @@ body {
 
 .navbar-collapse ul{
 	color: #4E5F6E;
-	height: 89vh;
+	/* height: auto; */
 	text-transform: uppercase;
 	background-color: #F9F5F4;
 }
