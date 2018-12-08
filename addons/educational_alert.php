@@ -1,9 +1,9 @@
 <?php
 
     function add_confirm_education(){
-        $realSite = '';
-        $realSiteURL = '';
-        $designerName = '';
+        $realSite = 'The Living Room';
+        $realSiteURL = 'http://www.thelivingroom.co.nz/';
+        $designerName = 'Sumitra Manga';
         if( ! is_admin() ){
 
             ?>

@@ -1,6 +1,6 @@
 <?php
 
-// require get_parent_theme_file_path('./addons/educational_alert.php');
+require get_parent_theme_file_path('./addons/educational_alert.php');
 
 function add_js_and_css() {
 	// CSS's
