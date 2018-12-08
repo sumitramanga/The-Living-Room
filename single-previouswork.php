@@ -90,12 +90,6 @@
 			<?php endwhile; ?>
 		<?php endif; ?>
 
-		<div class="container backBtnCon">
-			<?php if( wp_get_referer() ): ?>
-				  <a href="'<?php echo wp_get_referer() ?>'" class="backBtnIcon"><i class="fas fa-chevron-left"></i></a>
-			<?php endif; ?>
-		</div>
-
 		<div class="container">
 			<div class="row">
 				<div class="col-12 col-sm-12 col-md-7 col-lg-7">

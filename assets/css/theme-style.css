@@ -226,6 +226,7 @@ body {
 	font-family: 'Cabin', sans-serif;
 	font-size: 1em;
 	padding: 0 1em;
+	width: 289px;
 }
 
 .homeCusName {
@@ -405,6 +406,10 @@ body {
 
 /* SINGLE POST FOR PREVIOUS WORK */
 
+.singleError {
+	font-family: 'Cabin', sans-serif;
+}
+
 .backBtnCon {
 	margin-bottom: 1em;
 }
@@ -454,6 +459,7 @@ body {
 
 .successMesageWrap  {
 	background-color: white;
+	font-weight: bold;
 	padding: 1em;
 }
 
