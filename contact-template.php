@@ -2,8 +2,6 @@
 
 <?php
 	if ($_POST) {
-		// var_dump($_POST);
-
 		$errors = array();
 		$success_messsage = '';
 

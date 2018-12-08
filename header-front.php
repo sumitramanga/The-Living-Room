@@ -4,11 +4,10 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<meta property="og:title" content="<?php echo bloginfo('name') ?>">
+		<meta property="og:title" content="<?php echo bloginfo('name'); ?>">
 		<meta property="og:type" content="article">
 		<meta property="og:url" content="<?php echo site_url(); ?>" />
-		<meta property="og:description" content="<?php echo bloginfo('description') ?>">
-		<meta property="og:image" content=""> <!--  insert logo -->
+		<meta property="og:description" content="<?php echo bloginfo('description'); ?>">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 		<title><?php echo site_url(); ?></title>
 		<?php wp_head(); ?>
