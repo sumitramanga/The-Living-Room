@@ -86,8 +86,8 @@
                 }
 
                 function confirmAcknowledge(){
-                    var body = document.getElementsByTagName('body')[0].style.overflow = "scroll";
-                    var html = document.getElementsByTagName('html')[0].style.overflow = "scroll";
+                    var body = document.getElementsByTagName('body')[0].style.overflow = "auto";
+                    var html = document.getElementsByTagName('html')[0].style.overflow = "auto";
                     var elem = document.getElementById("acknowledgeOverlay");
                     elem.parentNode.removeChild(elem);
                     sessionStorage.setItem("acknowledged", true);
