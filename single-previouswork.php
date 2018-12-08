@@ -90,9 +90,9 @@
 			<?php endwhile; ?>
 		<?php endif; ?>
 
-		<div class="container">
+		<div class="container backBtnCon">
 			<?php if( wp_get_referer() ): ?>
-				  <a href="'<?php echo wp_get_referer() ?>'"><i class="fas fa-chevron-left"></i></a>
+				  <a href="'<?php echo wp_get_referer() ?>'" class="backBtnIcon"><i class="fas fa-chevron-left"></i></a>
 			<?php endif; ?>
 		</div>
 
@@ -110,7 +110,7 @@
 					<?php if ($_POST && !empty($errors)): ?>
 						<div class="row errorMsgWrap">
 							<div class="col">
-								<h4 class="errorMessage">Your enquiry did not send through</h4>
+								<h4 class="errorMessage"><strong>Your enquiry did not send through</strong></h4>
 								<ul>
 									<?php foreach($errors as $single_error): ?>
 										<li class="singleError"><?php echo($single_error); ?></li>
@@ -121,7 +121,9 @@
 					<?php endif; ?>
 
 					<?php if($_POST && empty($errors)): ?>
-						<?php echo $success_message; ?>
+						<div class="successMesageWrap">
+							<?php echo $success_message; ?>
+						</div>
 					<?php endif; ?>
 					<form class="contanctForm" action="<?php get_permalink(); ?>" method="post">
 						<?php wp_nonce_field('wp_enquiry_form'); ?>

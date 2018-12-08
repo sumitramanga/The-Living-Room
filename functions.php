@@ -72,3 +72,10 @@ function add_custom_header_support(){
 }
 
 add_action('init', 'add_custom_header_support');
+
+
+function add_admin_settings(){
+	wp_enqueue_style('admin-style', get_template_directory_uri() . '/assets/css/admin-style.css', array(), '0.0.1', 'all');
+}
+
+add_action('admin_enqueue_scripts', 'add_admin_settings');

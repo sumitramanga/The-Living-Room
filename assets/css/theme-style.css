@@ -412,6 +412,23 @@ body {
 
 /* SINGLE POST FOR PREVIOUS WORK */
 
+.backBtnCon {
+	margin-bottom: 1em;
+}
+
+.backBtnIcon {
+	font-size: 1.2em;
+	color: #4E5F6E;
+}
+
+.backBtnIcon:link {
+	color: #4E5F6E;
+}
+
+.backBtnColor:hover{
+	color: white;
+}
+
 .singleWorkImg {
 	width: 100%;
 	height: 300px;
@@ -437,8 +454,14 @@ body {
     padding: 1.2em 0.1em;
 }
 
-.errorMessage {
+.errorMessage, .successMesageWrap {
+	font-family: 'Cabin', sans-serif;
 	font-size: 1em;
+}
+
+.successMesageWrap  {
+	background-color: white;
+	padding: 1em;
 }
 
 @media only screen and (min-width: 576px) {

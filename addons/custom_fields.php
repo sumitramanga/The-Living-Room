@@ -107,25 +107,31 @@ function show_metaboxes($post, $args) {
 			switch ($field['type']) {
 				// for descrptions for service
 				case 'text':
-					$output .= '<label for="'.$id.'">'.$field['title'].'</label>';
-					$output .= '<input type="text" name="'.$id.'" class="servicesInput" style="width:100%;" value="'.$custom_values[$id][0].'">';
+					$output .= '<div class="form-group">';
+					$output .= '<label for="'.$id.'" class="labelTitle">'.$field['title'].'</label>';
+					$output .= '<input type="text" name="'.$id.'" class="inputStyles textInput" value="'.$custom_values[$id][0].'">';
+					$output .= '</div>';
 				break;
 				//for icons
 				case 'radio':
-					$output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
+					$output .= '<div class="form-group">';
+					$output .= '<label for="'.$id.'" class="labelTitle">'.$field['title'].'</label>';
 					$options = $field['options'];
 					foreach ($options as $option) {
 						$checked_value = '';
 						if ($custom_values['icon']['0'] == $option) {
 							$checked_value = 'checked="checked"';
 						}
-						$output .= '<input type="radio" name="'.$id.'" value="'.$option.'"'.$checked_value.'>'.$option.'<br>';
+						$output .= '<div class="radioBtns">';
+						$output .= '<input type="radio" name="'.$id.'" value="'.$option.'"'.$checked_value.' class="inputStyles">'.$option.'';
+						$output .= '</div>';
 					}
 				break;
 				// for contact/enquries
 				case 'select':
-					$output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
-					$output .= '<select name="'.$id.'"><option value="">Choose an option</option>';
+					$output .= '<div class="form-group">';
+					$output .= '<label for="'.$id.'" class="labelTitle">'.$field['title'].'</label>';
+					$output .= '<select class="inputStyles textInput" name="'.$id.'"><option value="">Choose an option</option>';
 					$options = $field['options'];
 					foreach ($options as $option) {
 						$selected_value = '';
@@ -134,29 +140,36 @@ function show_metaboxes($post, $args) {
 						}
 						$output .= '<option value="'.$option.'"'.$selected_value.'>'.$option.'</option>';
 					}
-					$output .= '</select><br>';
+					$output .= '</select>';
+					$output .= '</div>';
 				break;
 
 				// for enquiries
 				case 'email':
-					$output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
-					$output .= '<input type="email" name="'.$id.'" class="servicesInput" style="width:100%;" value="'.$custom_values[$id][0].'"><br>';
+					$output .= '<div class="form-group">';
+					$output .= '<label for="'.$id.'" class="labelTitle">'.$field['title'].'</label>';
+					$output .= '<input type="email" name="'.$id.'" class="inputStyles textInput" value="'.$custom_values[$id][0].'">';
+					$output .= '</div>';
 				break;
 
 				// for testimonials & service description
 				case 'textarea':
-					$output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
-					$output .= '<textarea rows="4" cols="50" name="'.$id.'" class="servicesTextArea" style="width:100%;">';
+					$output .= '<div class="form-group">';
+					$output .= '<label for="'.$id.'" class="labelTitle">'.$field['title'].'</label>';
+					$output .= '<textarea rows="9" cols="50" name="'.$id.'" class="inputStyles">';
 					$field_text = '';
 					if ( strlen($custom_values[$id][0]) > 1) {
 						$field_text = $custom_values[$id][0];
 					}
 					$output .= $field_text.'</textarea>';
+					$output .= '</div>';
 				break;
 
 				default:
-					$output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
-					$output .= '<input type="text" name="'.$id.'" class="servicesInput" style="width:100%;"><br>';
+					$output .= '<div class="form-group">';
+					$output .= '<label for="'.$id.'" class="labelTitle">'.$field['title'].'</label>';
+					$output .= '<input type="text" name="'.$id.'" class="inputStyles textInput">';
+					$output .= '</div>';
 				break;
 			}
 		}
