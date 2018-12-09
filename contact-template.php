@@ -49,7 +49,6 @@
 				)
 			);
 			wp_insert_post($args);
-			$success_message = 'Thank you for your message. We will get back to you shortly';
 		}
 	}
  ?>
@@ -79,13 +78,16 @@
 						</div>
 					</div>
 				<?php endif; ?>
-				<div class="successMessageWrap">
-					<p class="successMessage">
-						<?php if($_POST && empty($errors)): ?>
-							<?php echo $success_message; ?>
-						<?php endif; ?>
-					</p>
-				</div>
+				<?php if($_POST && empty($errors)): ?>
+					<div class="successMessageWrap">
+						<p class="successMessage">
+							<?php
+							 	$success_message = 'Thank you for your message. We will get back to you shortly';
+								echo $success_message;
+							 ?>
+						</p>
+					</div>
+				<?php endif; ?>
 				<div class="row">
 					<div class="col">
 						<form class="contanctForm" action="<?php get_permalink(); ?>" method="post">
