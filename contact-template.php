@@ -79,11 +79,13 @@
 						</div>
 					</div>
 				<?php endif; ?>
-
-				<?php if($_POST && empty($errors)): ?>
-					<?php echo $success_message; ?>
-				<?php endif; ?>
-
+				<div class="successMessageWrap">
+					<p class="successMessage">
+						<?php if($_POST && empty($errors)): ?>
+							<?php echo $success_message; ?>
+						<?php endif; ?>
+					</p>
+				</div>
 				<div class="row">
 					<div class="col">
 						<form class="contanctForm" action="<?php get_permalink(); ?>" method="post">

@@ -263,7 +263,7 @@ body {
 	text-align: center;
 }
 
-.contactBlurb {
+.contactBlurb, .contactBlurbWrap p {
 	font-family: 'Cabin', sans-serif;
 	font-size: 1em;
 	margin: 1.9em 0 2em;
@@ -313,7 +313,7 @@ body {
 	margin-bottom: 1em;
 }
 
-.aboutText {
+.aboutText, .aboutText p {
 	font-family: 'Cabin', sans-serif;
 	font-size: 0.9em;
 }
@@ -458,6 +458,14 @@ body {
 }
 
 .successMesageWrap  {
+	background-color: white;
+	font-weight: bold;
+	padding: 1em;
+}
+
+.successMessageWrap, .successMessageWrap p {
+	font-family: 'Cabin', sans-serif;
+	font-size: 1em;
 	background-color: white;
 	font-weight: bold;
 	padding: 1em;
