@@ -61,7 +61,7 @@
 			<div class="container contactContainer">
 				<?php if (strlen(get_the_content()) > 0): ?>
 					<div class="contactBlurbWrap">
-						<p class="contactBlurb"><?php echo get_the_content(); ?></p>
+						<?php echo get_the_content(); ?>
 					</div>
 				<?php endif; ?>
 
@@ -80,12 +80,12 @@
 				<?php endif; ?>
 				<?php if($_POST && empty($errors)): ?>
 					<div class="successMessageWrap">
-						<p class="successMessage">
+						<!-- <p class="successMessage"> -->
 							<?php
 							 	$success_message = 'Thank you for your message. We will get back to you shortly';
 								echo $success_message;
 							 ?>
-						</p>
+						<!-- </p> -->
 					</div>
 				<?php endif; ?>
 				<div class="row">

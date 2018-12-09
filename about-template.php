@@ -8,9 +8,9 @@
 				<div class="container aboutTextCon">
 					<div class="row">
 						<div class="col-sm-12 aboutTextCol">
-							<p class="aboutText">
+							<!-- <p class="aboutText"> -->
 								<?php echo get_the_content(); ?>
-							</p>
+							<!-- </p> -->
 						</div>
 					</div>
 				</div>
