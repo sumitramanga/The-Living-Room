@@ -19,6 +19,15 @@
 					 </div>
 				 <?php endforeach; ?>
 
+				<?php for ($i=1; $i <=3 ; $i++): ?>
+					<?php if (strlen($carousel_img_.''.$i) > 0): ?>
+						<?php echo $carousel_img_.''.$i ?>
+						<!-- <div class="swiper-slide">
+						  <div class="carouselImgBg" style="background-image: url(<?php // echo $carousel_img_.''.$i ?>);"></div>
+					   </div> -->
+					<?php endif; ?>
+			 	<?php endfor; ?>
+
 				 <div class="carouselTopLayerWrapper">
 					<div class="carouselTopLayer">
 						<?php $land_screen_text = get_theme_mod('landing_screen_text_setting'); ?>
